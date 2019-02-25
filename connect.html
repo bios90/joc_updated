@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JustOrder Company</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800" rel="stylesheet">
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/cupertino/jquery-ui.css">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHoROJoCnsD4-7gkV4uPWo0j4DwyyLRU4&libraries=places"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ======================= NAviagation======================= -->
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-transparent sticky-top ">
+        <div id="header_container" class="container">
+            <a class="navbar-brand" href="#">JOC</a>
+	        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarSupportedContent1"
+		        aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="dark-blue-text">
+		        	<i id="hamburger" class="fa fa-bars fa-1x"></i>
+		        </span>
+    		</button>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ссылка1</a>
+                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ссылка2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Личный Кабинет</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- ====================================== -->    
+
+
+
+
+
+
+        <div id="from_container" class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3 class="title gradi_text">Форма добавления кафе</h3>
+                </div>
+
+                <div id="message" class="col-12 text-center">
+                    
+                </div>
+            </div>
+
+            
+            <form id="form_add_cafe" class="row">
+                
+                
+                    <div class="col-md-4 col-xs-12">
+                        <div class="form-group">
+                            <label class="myLabel" for="#admin_name">Имя:</label>
+                            <input id="admin_name" name="admin_name" class="form-control myInput">
+                            <small class="form-text text-muted">Имя директора/администратора кафе </small>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-12">
+                        <div class="form-group">
+                            <label class="myLabel" for="#admin_surname">Фамилия:</label>
+                            <input id="admin_surname" name="admin_surname" class="form-control myInput">
+                            <small class="form-text text-muted">Фамлия директора/администратора кафе </small>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-12">
+                        <div class="form-group">
+                            <label class="myLabel" for="#cafe_phone">Телефон:</label>
+                            <input id="cafe_phone" name="cafe_phone" class="form-control myInput">
+                            <small class="form-text text-muted">Телефон для связи с представиетлем кафе </small>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-12">
+                        <div class="form-group">
+                            <label class="myLabel" for="#cafe_email">Email:</label>
+                            <input id="cafe_email" name="cafe_email" class="form-control myInput">
+                            <small class="form-text text-muted">На данный email будет приходить информация о посутпающих заказах </small>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-12">
+                        <div class="form-group">
+                            <label class="myLabel" for="#cafe_pass">Пароль:</label>
+                            <input id="cafe_pass" name="cafe_pass" class="form-control myInput">
+                            <small class="form-text text-muted">Пароль для входа в личный кабинет </small>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-4 col-xs-12">
+                        <div class="form-group">
+                            <label class="myLabel" for="#cafe_name">Название Кафе:</label>
+                            <input id="cafe_name" name="cafe_name" class="form-control myInput">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="myLabel" for="#cafe_adress">Адрес Кафе:</label>
+                            <input id="cafe_adress" name="cafe_adress" class="form-control myInput">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-3 col-xs-6">
+                        <label for="hours_ot">Часы работы от :</label>
+                        <select id="hours_ot" name="hours_ot" class="form-control">
+                            <option selected>00</option>
+                            <option>01</option>
+                            <option>02</option>
+                            <option>03</option>
+                            <option>04</option>
+                            <option>05</option>
+                            <option>06</option>
+                            <option>07</option>
+                            <option>08</option>
+                            <option>09</option>
+                            <option>10</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                        </select>
+                    </div>
+
+
+                    <div class="form-group col-md-3 col-xs-6">
+                        <label for="hours_do">до :</label>
+                        <select id="hours_do" name="hours_do" class="form-control">
+                            <option selected>00</option>
+                            <option>01</option>
+                            <option>02</option>
+                            <option>03</option>
+                            <option>04</option>
+                            <option>05</option>
+                            <option>06</option>
+                            <option>07</option>
+                            <option>08</option>
+                            <option>09</option>
+                            <option>10</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="myLabel" for="#cafe_pay_id">Ваш счет для оплаты яндекс кассы</label>
+                            <input id="cafe_pay_id" name="cafe_pay_id" class="form-control myInput">
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-6 col-xs-12">
+                        <label class="myLabel" for="#cafe_logo">Изображение-логотип кафе</label>
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <span class="btn btn-primary btn-file">
+                                    Выбрать <input id="cafe_logo" name="cafe_logo" type="file" single>
+                                </span>
+                            </span>
+                            <input type="text" class="form-control" readonly>
+                        </div>
+                    </div>
+
+                    <div class="offset-md-3 col-md-6 col-sm-12">
+                        <button id="send_cafe" class="btn btn-success" type="submit"><i class="fas fa-user-plus"></i> Отправить заявку</button>
+                    </div>
+            </form>            
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/connect.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
