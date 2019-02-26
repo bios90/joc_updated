@@ -728,7 +728,6 @@ a:hover
 
 #reg_cafe_logo
 {
-
     position: absolute;
     top: 0;
     left: 0;
@@ -758,8 +757,31 @@ a:hover
     color: #d9d9d9;
 }
 
+#logo_logo
+{
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    width: 100px;
+    height: 100px;
+    padding: 1px;
+}
+
 #logo_small
 {
+
+    width: calc(100% - 112px);;
+    float: right;
+}
+
+#current_logo_name
+{
+    font-size: 12px;
+    text-align: left;
+    color: #5A5A5A;
+    margin-top: 20px;
     width: calc(100% - 112px);;
     float: right;
 }
@@ -804,7 +826,11 @@ input[type=checkbox]:checked + label
     font-size: 12px;
     line-height: 28px;
     margin-left: 10px;
+}
 
+.input_box_error
+{
+    border: 1px solid rgba(245,28,28,80);
 }
 /**/
 

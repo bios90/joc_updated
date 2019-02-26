@@ -1,7 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bios90
- * Date: 2019-02-26
- * Time: 18:54
- */
+$conn = mysqli_connect("localhost","root","","joc");
+if(mysqli_connect_error())
+{
+    die("Error: unable to Connect " . mysqli_connect_error() );
+}
+?>

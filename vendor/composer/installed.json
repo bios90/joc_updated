@@ -1,0 +1,67 @@
+[
+    {
+        "name": "pragmarx/random",
+        "version": "v0.2.2",
+        "version_normalized": "0.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/antonioribeiro/random.git",
+            "reference": "daf08a189c5d2d40d1a827db46364d3a741a51b7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/antonioribeiro/random/zipball/daf08a189c5d2d40d1a827db46364d3a741a51b7",
+            "reference": "daf08a189c5d2d40d1a827db46364d3a741a51b7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0"
+        },
+        "require-dev": {
+            "fzaninotto/faker": "~1.7",
+            "phpunit/phpunit": "~6.4",
+            "pragmarx/trivia": "~0.1",
+            "squizlabs/php_codesniffer": "^2.3"
+        },
+        "suggest": {
+            "fzaninotto/faker": "Allows you to get dozens of randomized types",
+            "pragmarx/trivia": "For the trivia database"
+        },
+        "time": "2017-11-21T05:26:22+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PragmaRX\\Random\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Antonio Carlos Ribeiro",
+                "email": "acr@antoniocarlosribeiro.com",
+                "homepage": "https://antoniocarlosribeiro.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "Create random chars, numbers, strings",
+        "homepage": "https://github.com/antonioribeiro/random",
+        "keywords": [
+            "Randomize",
+            "faker",
+            "pragmarx",
+            "random",
+            "random number",
+            "random pattern",
+            "random string"
+        ]
+    }
+]

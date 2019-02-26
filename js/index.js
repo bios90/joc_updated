@@ -1,0 +1,372 @@
+let reg_form;
+let err_div_email;
+let err_div_password;
+let err_div_name;
+let err_div_ooo;
+let err_div_adress_ur;
+let err_div_okpo;
+let err_div_adress_fact;
+let err_div_dirfio;
+let err_div_phone;
+let err_div_time;
+let err_div_inn;
+let err_div_logo;
+
+
+$(document).ready(function ()
+{
+    init();
+
+    reg_form = $('#reg_form');
+
+    reg_form.submit(function (event)
+    {
+        event.preventDefault();
+        // var dataToSend = $(this).serializeArray();
+        var dataToSend = new FormData(this);
+        console.log($(this).serializeArray());
+
+        $.ajax(
+            {
+                url: "/sside/register.php",
+                type: 'POST',
+                data: dataToSend,
+                async: true,
+                success: function (data)
+                {
+                    console.log(data);
+                    data = $.parseJSON(data);
+
+                    if ($.inArray('failed', data) > -1)
+                    {
+                        showErrors(data);
+                    }
+
+                    if ($.inArray('success', data) > -1)
+                    {
+                        clearInputs();
+                    }
+
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown)
+                {
+                    console.log(data);
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+
+        return false;
+    });
+
+
+    $('#reg_cafe_logo').change(function ()
+    {
+        var input = this;
+        var url = $(this).val();
+        var ext = url.substring(url.lastIndexOf('.') + 1).toLowerCase();
+        if (input.files && input.files[0] && (ext == "png" || ext == "jpeg" || ext == "jpg"))
+        {
+            var reader = new FileReader();
+
+            reader.onload = function (e)
+            {
+                $('#logo_logo').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+
+            var filename = $(this).val().split('\\').pop();
+            $('#current_logo_name').html(filename);
+        }
+    });
+});
+
+function init()
+{
+    err_div_email = $('#err_div_email');
+    err_div_password = $('#err_div_password');
+    err_div_name = $('#err_div_name');
+    err_div_ooo = $('#err_div_ooo');
+    err_div_adress_ur = $('#err_div_adress_ur');
+    err_div_okpo = $('#err_div_okpo');
+    err_div_adress_fact = $('#err_div_adress_fact');
+    err_div_dirfio = $('#err_div_dirfio');
+    err_div_phone = $('#err_div_phone');
+    err_div_time = $('#err_div_time');
+    err_div_inn = $('#err_div_inn');
+    err_div_logo = $('#err_div_logo');
+    err_div_agree = $('#err_div_agree');
+}
+
+
+function clearInputs()
+{
+    let allErrorDivs = $('.clearInputs');
+    allErrorDivs.addClass('invisible');
+    $('input[type=text]').val('');
+    $("#reg_cafe_logo").val(null);
+    $('#logo_logo').attr('src', '#');
+    $('#current_logo_name').html('');
+
+}
+
+function showErrors(data)
+{
+    console.log(data);
+    if ($.inArray('email', data) > -1)
+    {
+        console.log("email")
+        err_div_email.removeClass("invisible");
+        let par = err_div_email.find('p').first();
+        let input = err_div_email.prev('div').find('input');
+        par.text('Введите корректный email');
+        input.addClass('input_box_error');
+    }
+    else
+    {
+        err_div_email.addClass("invisible");
+        let par = err_div_email.find('p').first();
+        let input = err_div_email.prev('div').find('input');
+        par.text('');
+        input.removeClass('input_box_error');
+    }
+
+    if ($.inArray('password', data) > -1)
+    {
+        err_div_password.removeClass("invisible");
+        let par = err_div_password.find('p').first();
+        let input = err_div_password.prev('div').find('input');
+        par.text('Введите пароль, минимум 8 символов.');
+        input.addClass('input_box_error');
+    } else
+    {
+        err_div_password.addClass("invisible");
+        let par = err_div_password.find('p').first();
+        let input = err_div_password.prev('div').find('input');
+        par.text('');
+        input.removeClass('input_box_error');
+    }
+
+    if ($.inArray('name', data) > -1)
+    {
+        err_div_name.removeClass("invisible");
+        let par = err_div_name.find('p').first();
+        let input = err_div_name.prev('div').find('input');
+        par.text('Введите название кафе.');
+        input.addClass('input_box_error');
+    } else
+    {
+        err_div_name.addClass("invisible");
+        let par = err_div_name.find('p').first();
+        let input = err_div_name.prev('div').find('input');
+        par.text('');
+        input.removeClass('input_box_error');
+    }
+
+    if ($.inArray('ooo', data) > -1)
+    {
+        err_div_ooo.removeClass("invisible");
+        let par = err_div_ooo.find('p').first();
+        let input = err_div_ooo.prev('div').find('input');
+        par.text('Введите название ООО или ИП.');
+        input.addClass('input_box_error');
+    } else
+    {
+        err_div_ooo.addClass("invisible");
+        let par = err_div_ooo.find('p').first();
+        let input = err_div_ooo.prev('div').find('input');
+        par.text('');
+        input.removeClass('input_box_error');
+    }
+
+    if ($.inArray('adress_ur', data) > -1)
+    {
+        err_div_adress_ur.removeClass("invisible");
+        let par = err_div_adress_ur.find('p').first();
+        let input = err_div_adress_ur.prev('div').find('input');
+        par.text('Введите Юридический адресс кафе.');
+        input.addClass('input_box_error');
+    } else
+    {
+        err_div_adress_ur.addClass("invisible");
+        let par = err_div_adress_ur.find('p').first();
+        let input = err_div_adress_ur.prev('div').find('input');
+        par.text('');
+        input.removeClass('input_box_error');
+    }
+
+    if ($.inArray('okpo', data) > -1)
+    {
+        err_div_okpo.removeClass("invisible");
+        let par = err_div_okpo.find('p').first();
+        let input = err_div_okpo.prev('div').find('input');
+        par.text('Введите ОКПО.');
+        input.addClass('input_box_error');
+    } else
+    {
+        err_div_okpo.addClass("invisible");
+        let par = err_div_okpo.find('p').first();
+        let input = err_div_okpo.prev('div').find('input');
+        par.text('');
+        input.removeClass('input_box_error');
+    }
+
+    if ($.inArray('adress_fact', data) > -1)
+    {
+        err_div_adress_fact.removeClass("invisible");
+        let par = err_div_adress_fact.find('p').first();
+        let input = err_div_adress_fact.prev('div').find('input');
+        par.text('Введите Фактический адрес кафе.');
+        input.addClass('input_box_error');
+    } else
+    {
+        err_div_adress_fact.addClass("invisible");
+        let par = err_div_adress_fact.find('p').first();
+        let input = err_div_adress_fact.prev('div').find('input');
+        par.text('');
+        input.removeClass('input_box_error');
+    }
+
+    if ($.inArray('dirfio', data) > -1)
+    {
+        err_div_dirfio.removeClass("invisible");
+        let par = err_div_dirfio.find('p').first();
+        let input = err_div_dirfio.prev('div').find('input');
+        par.text('Введите ФИО генерального директора кафе.');
+        input.addClass('input_box_error');
+    } else
+    {
+        err_div_dirfio.addClass("invisible");
+        let par = err_div_dirfio.find('p').first();
+        let input = err_div_dirfio.prev('div').find('input');
+        par.text('');
+        input.removeClass('input_box_error');
+    }
+
+    if ($.inArray('phone', data) > -1)
+    {
+        err_div_phone.removeClass("invisible");
+        let par = err_div_phone.find('p').first();
+        let input = err_div_phone.prev('div').find('input');
+        par.text('Введите ФИО генерального директора кафе.');
+        input.addClass('input_box_error');
+    } else
+    {
+        err_div_phone.addClass("invisible");
+        let par = err_div_phone.find('p').first();
+        let input = err_div_phone.prev('div').find('input');
+        par.text('');
+        input.removeClass('input_box_error');
+    }
+
+    if ($.inArray('hour_ot', data) > -1 || $.inArray('minute_ot', data) > -1 || $.inArray('hour_do', data) > -1 || $.inArray('minute_do', data) > -1)
+    {
+        err_div_time.removeClass("invisible");
+        let par = err_div_time.find('p').first();
+
+        let time1 = err_div_time.prev('div').find('#time1');
+        let time2 = err_div_time.prev('div').find('#time2');
+        let time3 = err_div_time.prev('div').find('#time3');
+        let time4 = err_div_time.prev('div').find('#time4');
+
+        if ($.inArray('hour_ot', data) > -1)
+        {
+            time1.addClass('input_box_error');
+        } else
+        {
+            time1.removeClass('input_box_error');
+        }
+
+        if ($.inArray('minute_ot', data) > -1)
+        {
+            time2.addClass('input_box_error');
+        } else
+        {
+            time2.removeClass('input_box_error');
+        }
+
+        if ($.inArray('hour_do', data) > -1)
+        {
+            time3.addClass('input_box_error');
+        } else
+        {
+            time3.removeClass('input_box_error');
+        }
+
+
+        if ($.inArray('minute_do', data) > -1)
+        {
+            time4.addClass('input_box_error');
+        } else
+        {
+            time4.removeClass('input_box_error');
+        }
+
+        par.text('Введите корректное время работы кафе.');
+    } else
+    {
+        err_div_time.addClass("invisible");
+        let par = err_div_time.find('p').first();
+
+        let time1 = err_div_time.prev('div').find('#time1');
+        let time2 = err_div_time.prev('div').find('#time2');
+        let time3 = err_div_time.prev('div').find('#time3');
+        let time4 = err_div_time.prev('div').find('#time4');
+        par.text('');
+
+        time1.removeClass('input_box_error');
+        time2.removeClass('input_box_error');
+        time3.removeClass('input_box_error');
+        time4.removeClass('input_box_error');
+    }
+
+    if ($.inArray('inn', data) > -1)
+    {
+        err_div_inn.removeClass("invisible");
+        let par = err_div_inn.find('p').first();
+        let input = err_div_inn.prev('div').find('input');
+        par.text('Введите ИНН кафе.');
+        input.addClass('input_box_error');
+    } else
+    {
+        err_div_inn.addClass("invisible");
+        let par = err_div_inn.find('p').first();
+        let input = err_div_inn.prev('div').find('input');
+        par.text('');
+        input.removeClass('input_box_error');
+    }
+
+    if ($.inArray('logo', data) > -1)
+    {
+        err_div_logo.removeClass("invisible");
+        let par = err_div_logo.find('p').first();
+        let input = err_div_logo.prev('div').find('#file_input_div');
+        par.text('Добавьте логотип кафе');
+        input.addClass('input_box_error');
+    } else
+    {
+        err_div_logo.addClass("invisible");
+        let par = err_div_logo.find('p').first();
+        let input = err_div_logo.prev('div').find('#file_input_div');
+        par.text('');
+        input.removeClass('input_box_error');
+    }
+
+    if ($.inArray('agree', data) > -1)
+    {
+        err_div_agree.removeClass("invisible");
+        let par = err_div_agree.find('p').first();
+        let input = err_div_agree.prev('div').find('input');
+        par.text('Необходимо подтвердить согласие с условиями договора');
+        input.addClass('input_box_error');
+    } else
+    {
+        err_div_agree.addClass("invisible");
+        let par = err_div_agree.find('p').first();
+        let input = err_div_agree.prev('div').find('input');
+        par.text('');
+        input.removeClass('input_box_error');
+    }
+}

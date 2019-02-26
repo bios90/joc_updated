@@ -128,257 +128,269 @@
 
 <div class="modal fade" id="modal_reg" tabindex="-1" role="dialog" aria-labelledby="modal_reg_title" aria-hidden="true">
     <div id="my_modal_reg" class="modal-dialog modal-lg" role="document">
-        <div class="modal-content" style="border: 0">
-            <div class="modal-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h4 id="modal_reg_title" class="text-center">Регистрация кафе</h4>
-                            <p id="modal_reg_subtitle" class="text-center">Регистрация - заявка кафе для участия в
-                                программе сервисов JOC. Мы свяжемся с вами для обсуждения всех деталей
-                                соотрудничества.</p>
+        <div class="modal-content">
+            <form action="/" method="post" id="reg_form" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 id="modal_reg_title" class="text-center">Регистрация кафе</h4>
+                                <p id="modal_reg_subtitle" class="text-center">Регистрация - заявка кафе для участия в
+                                    программе сервисов JOC. Мы свяжемся с вами для обсуждения всех деталей
+                                    соотрудничества.</p>
+                            </div>
                         </div>
+                    </div>
+
+                    <i class="fas fa-times my_modal_close" data-dismiss="modal" aria-label="Close"></i>
+                </div>
+
+
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row input_row">
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label" for="reg_email">Email</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 text-center">
+                                <input type="text" class="form-control my_input" id="reg_email" name="email">
+                                <small class="form-text ">На данный email будет приходить информация о посутпающих
+                                    заказах
+                                </small>
+                            </div>
+                            <div id="err_div_email" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+
+                        <div class="row input_row">
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label" for="reg_password">Пароль</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 text-center">
+                                <input type="text" class="form-control my_input" id="reg_password" name="password">
+                                <small class="form-text ">Пароль для входа в личный кабинет</small>
+                            </div>
+                            <div id="err_div_password" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+
+                        <div class="row input_row">
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label" for="reg_cafe_name">Название кафе</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 text-center">
+                                <input type="text" class="form-control my_input" id="reg_cafe_name" name="name">
+                                <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
+                            </div>
+                            <div id="err_div_name" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="row input_row">
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label" for="reg_cafe_ooo">Название ООО или ИП</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 text-center">
+                                <input type="text" class="form-control my_input" id="reg_cafe_ooo" name="ooo">
+                                <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
+                            </div>
+                            <div id="err_div_ooo" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="row input_row">
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label" for="reg_cafe_adress_ur">Юридический адрес</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 text-center">
+                                <input type="text" class="form-control my_input" id="reg_cafe_adress_ur"
+                                       name="adress_ur">
+                                <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
+                            </div>
+                            <div id="err_div_adress_ur" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="row input_row">
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label" for="reg_cafe_okpo">Код ОКПО</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 text-center">
+                                <input type="text" class="form-control my_input" id="reg_cafe_okpo" name="okpo">
+                                <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
+                            </div>
+                            <div id="err_div_okpo" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="row input_row">
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label" for="reg_cafe_adress_fact">Фактический адрес</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 text-center">
+                                <input type="text" class="form-control my_input" id="reg_cafe_adress_fact"
+                                       name="adress_fact">
+                                <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
+                            </div>
+                            <div id="err_div_adress_fact" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="row input_row">
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label" for="reg_cafe_dirfio">ФИО Ген. Директора</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 text-center">
+                                <input type="text" class="form-control my_input" id="reg_cafe_dirfio" name="dirfio">
+                                <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
+                            </div>
+                            <div id="err_div_dirfio" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="row input_row">
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label" for="reg_cafe_phone">Телефон</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 text-center">
+                                <input type="text" class="form-control my_input" id="reg_cafe_phone" name="phone">
+                                <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
+                            </div>
+                            <div id="err_div_phone" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="row input_row">
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label">Часы работы</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+
+                                <div class="time_input_div" style="display: inline-block">
+                                    <input id="time1" type="text" class="form-control my_input  time_input"
+                                           id="reg_cafe_hour_ot" name="hour_ot">
+                                    <input id="time2" type="text" class="form-control my_input  time_input"
+                                           id="reg_cafe_minute_ot" name="minute_ot">
+                                </div>
+
+                                <p id="middle_p"> - </p>
+
+                                <div class="time_input_div" style="display: inline-block">
+                                    <input id="time3" type="text" class="form-control my_input  time_input"
+                                           id="reg_cafe_hour_do" name="hour_do">
+                                    <input id="time4" type="text" class="form-control my_input  time_input"
+                                           id="reg_cafe_minute_do" name="minute_do">
+                                </div>
+
+                                <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
+                            </div>
+                            <div id="err_div_time" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="row input_row">
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label" for="reg_cafe_inn">ИНН</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 text-center">
+                                <input type="text" class="form-control my_input" id="reg_cafe_inn"
+                                       name="inn">
+                                <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
+                            </div>
+                            <div id="err_div_inn" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+
+
+                        <div class="row input_row">
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label" for="reg_cafe_inn">Логотип Кафе</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 text-center">
+
+                                <div id="file_input_div" class="form-control" style="float: left">
+                                    <p id="icon_upload">
+                                        <i id="upd" class="fas fa-upload"></i>
+                                        <img id="logo_logo" src="" alt="">
+                                    </p>
+                                    <input type="file" class="form-control my_input" id="reg_cafe_logo"
+                                           name="logo">
+                                </div>
+
+                                <small id="logo_small" class="form-text ">Логотип вашего кафе. Квадратные изображение
+                                    Jpeg/Png до 5 мб.
+                                </small>
+
+                                <p id="current_logo_name"></p>
+
+                            </div>
+                            <div id="err_div_logo" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
 
-                <i class="fas fa-times my_modal_close" data-dismiss="modal" aria-label="Close"></i>
-            </div>
 
+                <div class="modal-footer">
 
-            <div class="modal-body">
-                <div class="container">
-                    <div class="row input_row">
-                        <div class="col-sm-12 col-lg-3 text-center">
-                            <label class="my_modal_label" for="reg_email">Email</label>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 text-center">
-                            <input type="text" class="form-control my_input" id="reg_email" name="email">
-                            <small class="form-text ">На данный email будет приходить информация о посутпающих
-                                заказах
-                            </small>
-                        </div>
-                        <div class="col-sm-12 col-lg-3 invisible">
-                            <i class="fas fa-exclamation-circle error_icon"></i>
-                            <p class="input_error">Пароль должен содержать минимум 8 символов</p>
-                        </div>
-                    </div>
+                    <div class="container">
+                        <div class="row">
 
-                    <div class="row input_row">
-                        <div class="col-sm-12 col-lg-3 text-center">
-                            <label class="my_modal_label" for="reg_password">Пароль</label>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 text-center">
-                            <input type="text" class="form-control my_input" id="reg_password" name="password">
-                            <small class="form-text ">Пароль для входа в личный кабинет</small>
-                        </div>
-                        <div class="col-sm-12 col-lg-3 invisible">
-                            <i class="fas fa-exclamation-circle error_icon"></i>
-                            <p class="input_error">Пароль должен содержать минимум 8 символов</p>
-                        </div>
-                    </div>
-
-                    <div class="row input_row">
-                        <div class="col-sm-12 col-lg-3 text-center">
-                            <label class="my_modal_label" for="reg_cafe_name">Название кафе</label>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 text-center">
-                            <input type="text" class="form-control my_input" id="reg_cafe_name" name="cafe_name">
-                            <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
-                        </div>
-                        <div class="col-sm-12 col-lg-3 invisible">
-                            <i class="fas fa-exclamation-circle error_icon"></i>
-                            <p class="input_error">Пароль должен содержать минимум 8 символов</p>
-                        </div>
-                    </div>
-
-
-                    <div class="row input_row">
-                        <div class="col-sm-12 col-lg-3 text-center">
-                            <label class="my_modal_label" for="reg_cafe_ooo">Название ООО или ИП</label>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 text-center">
-                            <input type="text" class="form-control my_input" id="reg_cafe_ooo" name="cafe_ooo">
-                            <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
-                        </div>
-                        <div class="col-sm-12 col-lg-3 invisible">
-                            <i class="fas fa-exclamation-circle error_icon"></i>
-                            <p class="input_error">Пароль должен содержать минимум 8 символов</p>
-                        </div>
-                    </div>
-
-
-                    <div class="row input_row">
-                        <div class="col-sm-12 col-lg-3 text-center">
-                            <label class="my_modal_label" for="reg_cafe_adress_ur">Юридический адрес</label>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 text-center">
-                            <input type="text" class="form-control my_input" id="reg_cafe_adress_ur" name="cafe_adress">
-                            <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
-                        </div>
-                        <div class="col-sm-12 col-lg-3 invisible">
-                            <i class="fas fa-exclamation-circle error_icon"></i>
-                            <p class="input_error">Пароль должен содержать минимум 8 символов</p>
-                        </div>
-                    </div>
-
-
-                    <div class="row input_row">
-                        <div class="col-sm-12 col-lg-3 text-center">
-                            <label class="my_modal_label" for="reg_cafe_okpo">Код ОКПО</label>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 text-center">
-                            <input type="text" class="form-control my_input" id="reg_cafe_okpo" name="cafe_okpo">
-                            <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
-                        </div>
-                        <div class="col-sm-12 col-lg-3 invisible">
-                            <i class="fas fa-exclamation-circle error_icon"></i>
-                            <p class="input_error">Пароль должен содержать минимум 8 символов</p>
-                        </div>
-                    </div>
-
-
-                    <div class="row input_row">
-                        <div class="col-sm-12 col-lg-3 text-center">
-                            <label class="my_modal_label" for="reg_cafe_adress_fact">Фактический адрес</label>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 text-center">
-                            <input type="text" class="form-control my_input" id="reg_cafe_adress_fact"
-                                   name="cafe_adress_fact">
-                            <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
-                        </div>
-                        <div class="col-sm-12 col-lg-3 invisible">
-                            <i class="fas fa-exclamation-circle error_icon"></i>
-                            <p class="input_error">Пароль должен содержать минимум 8 символов</p>
-                        </div>
-                    </div>
-
-
-                    <div class="row input_row">
-                        <div class="col-sm-12 col-lg-3 text-center">
-                            <label class="my_modal_label" for="reg_cafe_dirfio">ФИО Ген. Директора</label>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 text-center">
-                            <input type="text" class="form-control my_input" id="reg_cafe_dirfio"
-                                   name="cafe_adress_dirfio">
-                            <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
-                        </div>
-                        <div class="col-sm-12 col-lg-3 invisible">
-                            <i class="fas fa-exclamation-circle error_icon"></i>
-                            <p class="input_error">Пароль должен содержать минимум 8 символов</p>
-                        </div>
-                    </div>
-
-
-                    <div class="row input_row">
-                        <div class="col-sm-12 col-lg-3 text-center">
-                            <label class="my_modal_label" for="reg_cafe_phone">Телефон</label>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 text-center">
-                            <input type="text" class="form-control my_input" id="reg_cafe_phone"
-                                   name="cafe_adress_phone">
-                            <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
-                        </div>
-                        <div class="col-sm-12 col-lg-3 invisible">
-                            <i class="fas fa-exclamation-circle error_icon"></i>
-                            <p class="input_error">Пароль должен содержать минимум 8 символов</p>
-                        </div>
-                    </div>
-
-
-                    <div class="row input_row">
-                        <div class="col-sm-12 col-lg-3 text-center">
-                            <label class="my_modal_label">Часы работы</label>
-                        </div>
-                        <div class="col-sm-12 col-lg-6">
-
-                            <div class="time_input_div" style="display: inline-block">
-                                <input id="time1" type="text" class="form-control my_input  time_input"
-                                       id="reg_cafe_hour_ot" name="cafe_hour_ot">
-                                <input id="time2" type="text" class="form-control my_input  time_input"
-                                       id="reg_cafe_minute_ot" name="cafe_minute_ot">
+                            <div id="err_div_agree" class="col-sm-12 col-md-4 offset-md-4 invisible">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
                             </div>
 
-                            <p id="middle_p"> - </p>
-
-                            <div class="time_input_div" style="display: inline-block">
-                                <input id="time3" type="text" class="form-control my_input  time_input"
-                                       id="reg_cafe_hour_do" name="cafe_hour_do">
-                                <input id="time4" type="text" class="form-control my_input  time_input"
-                                       id="reg_cafe_minute_do" name="cafe_minute_do">
+                            <div class="col-sm-12 col-md-4 offset-md-4 pb-4 pt-4">
+                                <input id="cheb" type="checkbox" name="agree" value="true">
+                                <label for="cheb"></label>
+                                <p id="cheb_text">Я согласен с условиями <a href="">договора*</a></p>
+                                <input type="submit" class="mybtn w-100 mt-0 mb-0" href="" value="Подключить">
                             </div>
-
-                            <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
-                        </div>
-                        <div class="col-sm-12 col-lg-3 invisible">
-                            <i class="fas fa-exclamation-circle error_icon"></i>
-                            <p class="input_error">Пароль должен содержать минимум 8 символов</p>
                         </div>
                     </div>
-
-
-                    <div class="row input_row">
-                        <div class="col-sm-12 col-lg-3 text-center">
-                            <label class="my_modal_label" for="reg_cafe_inn">Телефон</label>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 text-center">
-                            <input type="text" class="form-control my_input" id="reg_cafe_inn" name="cafe_adress_inn">
-                            <!--<small class="form-text ">Пароль для входа в личный кабинет</small>-->
-                        </div>
-                        <div class="col-sm-12 col-lg-3 invisible">
-                            <i class="fas fa-exclamation-circle error_icon"></i>
-                            <p class="input_error">Пароль должен содержать минимум 8 символов</p>
-                        </div>
-                    </div>
-
-
-                    <div class="row input_row">
-                        <div class="col-sm-12 col-lg-3 text-center">
-                            <label class="my_modal_label" for="reg_cafe_inn">Логотип Кафе</label>
-                        </div>
-                        <div class="col-sm-12 col-lg-6 text-center">
-
-                            <div id="file_input_div" class="form-control" style="float: left">
-                                <p id="icon_upload"><i id="upd" class="fas fa-upload"></i></p>
-                                <input type="file" class="form-control my_input" id="reg_cafe_logo"
-                                       name="cafe_adress_inn">
-                            </div>
-
-                            <small id="logo_small" class="form-text ">Логотип вашего кафе. Квадратные изображение
-                                Jpeg/Png до 5 мб.
-                            </small>
-
-                        </div>
-                        <div class="col-sm-12 col-lg-3 invisible">
-                            <i class="fas fa-exclamation-circle error_icon"></i>
-                            <p class="input_error">Пароль должен содержать минимум 8 символов</p>
-                        </div>
-                    </div>
-
 
                 </div>
-            </div>
 
-
-            <div class="modal-footer">
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-4 offset-md-4 pt-4 pb-4">
-                            <input id="cheb" type="checkbox" name="agree" value="true">
-                            <label for="cheb"></label>
-                            <p id="cheb_text">Я согласен с условиями <a href="">договора*</a></p>
-                            <input type="submit" class="mybtn w-100 mt-0 mb-0" href="" value="Подключить"></input>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
+            </form>
         </div>
+
     </div>
 </div>
-
 
 
 <!-- ********************* END REGISTER MODAL ***********************-->
