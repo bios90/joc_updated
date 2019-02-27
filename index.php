@@ -64,7 +64,8 @@
                         <a id="reglink" class="nav-link" href="#" data-toggle="modal" data-target="#modal_reg">Регистация</a>
                     </li>
                     <li class="nav-item enterli">
-                        <a id="enterlink" class="nav-link" href="#">Войти</a>
+                        <a id="enterlink" class="nav-link" href="#" data-toggle="modal"
+                           data-target="#modal_login">Войти</a>
                     </li>
                 </ul>
             </div>
@@ -72,6 +73,7 @@
         </nav>
     </div>
 </section>
+
 
 <!-- <section id="section_navbar">
     <div class="container">
@@ -122,6 +124,87 @@
 
 <!-- ************END NAV BAR**************** -->
 
+<!--*********** Region Login Modal ******************-->
+
+<div class="modal fade" id="modal_login" tabindex="-1" role="dialog" aria-labelledby="modal_login_title"
+     aria-hidden="true">
+    <div id="my_modal_login" class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <form action="/" method="post" id="login_form" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 id="modal_login_title" class="text-center">Войти</h4>
+                                <p id="modal_login_subtitle" class="text-center">Вход в личный кабинет
+                                    зарегистрированного кафе.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="fas fa-times my_modal_close" data-dismiss="modal" aria-label="Close"></i>
+                </div>
+
+
+                <div class="modal-body">
+                    <div id="login_inputs_container" class="container">
+                        <div id="email_login_row" class="row input_row">
+
+                            <div id="err_div_login" class="col-sm-12 invisible err_div text-center">
+                                <div style="display: inline-block">
+                                    <i class="fas fa-exclamation-circle error_icon"></i>
+                                    <p class="input_error"></p>
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label" for="login_email">Email</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 text-center">
+                                <input type="text" class="form-control my_input" id="login_email" name="email">
+                                <small class="form-text ">Email указанный при регистрации</small>
+                            </div>
+                            <div id="err_div_email_login" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+
+                        <div class="row input_row mb-4">
+                            <div class="col-sm-12 col-lg-3 text-center">
+                                <label class="my_modal_label" for="reg_password">Пароль</label>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 text-center">
+                                <input type="text" class="form-control my_input" id="login_password" name="password">
+
+                            </div>
+                            <div id="err_div_password_login" class="col-sm-12 col-lg-3 invisible err_div">
+                                <i class="fas fa-exclamation-circle error_icon"></i>
+                                <p class="input_error"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 offset-md-4 pb-4 pt-4">
+                                <input id="cheb_login" type="checkbox" name="remember_me" value="true">
+                                <label for="cheb_login"></label>
+                                <p id="cheb_text_login">Запомнить меня</p>
+                                <input type="submit" class="mybtn w-100 mt-0 mb-0" href="" value="Войти">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--**************** END LOGIN MODAL *****************-->
 
 <!-- ************** Region Register Modal   -->
 
@@ -606,6 +689,17 @@
             </div>
 
         </div>
+    </div>
+
+
+    <div id="alert-fixed" class="invisible">
+        <div class="col-sm-12 col-md-6 offset-md-3">
+            <div id="my_alert" class="alert " role="alert">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <p></p>
+            </div>
+        </div>
+
     </div>
 
 
