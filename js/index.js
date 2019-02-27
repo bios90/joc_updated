@@ -1,4 +1,5 @@
 let reg_form;
+let login_form;
 let err_div_email;
 let err_div_password;
 let err_div_name;
@@ -13,11 +14,14 @@ let err_div_inn;
 let err_div_logo;
 
 
+
+
 $(document).ready(function ()
 {
     init();
 
     reg_form = $('#reg_form');
+    login_form = $('#login_form');
 
     reg_form.submit(function (event)
     {
@@ -37,6 +41,7 @@ $(document).ready(function ()
                     console.log(data);
                     data = $.parseJSON(data);
 
+
                     if ($.inArray('failed', data) > -1)
                     {
                         showErrors(data);
@@ -45,6 +50,8 @@ $(document).ready(function ()
                     if ($.inArray('success', data) > -1)
                     {
                         clearInputs();
+                        $('#modal_reg').modal('hide');
+                        showSuccess();
                     }
 
                 },
@@ -59,6 +66,46 @@ $(document).ready(function ()
 
         return false;
     });
+
+
+    login_form.submit(function (event)
+    {
+        event.preventDefault();
+        var dataToSend = new FormData(this);
+        console.log($(this).serializeArray());
+
+        $.ajax(
+            {
+                url: "/sside/login.php",
+                type: 'POST',
+                data: dataToSend,
+                async: true,
+                success: function (data)
+                {
+                    console.log(data);
+                    data = $.parseJSON(data);
+
+                    if ($.inArray('failed', data) > -1)
+                    {
+                        showLoginErrors(data);
+                        return;
+                    }
+
+                    if($.inArray('success', data) > -1)
+                    {
+                        console.log("succc");
+                        window.location.reload(true);
+                    }
+
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+
+        return false;
+    });
+
 
 
     $('#reg_cafe_logo').change(function ()
@@ -101,6 +148,16 @@ function init()
 }
 
 
+function showSuccess()
+{
+    $('#my_alert').addClass('alert-success');
+    $('#alert-fixed').removeClass('invisible');
+    let par = $('#my_alert').find('p').first();
+    par.html('Ваша заявка успешно отправлена, в ближайшее время мы свяжемся с вами.');
+    $("#my_alert").show().delay(3500).fadeOut();
+}
+
+
 function clearInputs()
 {
     let allErrorDivs = $('.clearInputs');
@@ -112,16 +169,33 @@ function clearInputs()
 
 }
 
+function showLoginErrors(data)
+{
+    let err_div_login = $('#err_div_login');
+    err_div_login.removeClass("invisible");
+    let par = err_div_login.find('p').first();
+    let input = $('#login_inputs_container').find('input');
+    par.text('Проверьте введенные данные');
+    input.addClass('input_box_error');
+}
+
 function showErrors(data)
 {
     console.log(data);
-    if ($.inArray('email', data) > -1)
+    if ($.inArray('email', data) > -1 || $.inArray('email_already', data) > -1)
     {
-        console.log("email")
         err_div_email.removeClass("invisible");
         let par = err_div_email.find('p').first();
         let input = err_div_email.prev('div').find('input');
-        par.text('Введите корректный email');
+        if($.inArray('email_already', data) > -1)
+        {
+            par.text('Данный email уже занят');
+        }
+        else
+            {
+                par.text('Введите корректный email');
+            }
+
         input.addClass('input_box_error');
     }
     else

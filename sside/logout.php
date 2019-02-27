@@ -1,7 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bios90
- * Date: 2019-02-27
- * Time: 22:24
- */
+if($_GET['logout'] == 1)
+{
+    echo "entered here";
+    session_start();
+    session_unset();
+    session_destroy();
+    setcookie("remember_me","" ,time() -3600,'/', NULL, 0);
+    header("Location: /");
+}
+?>

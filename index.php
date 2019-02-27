@@ -1,3 +1,18 @@
+<?php
+session_start();
+include('sside/db.php');
+include('sside/models/Model_Cafe.php');
+include('sside/remember_me.php');
+if(isset($_SESSION['cafe']))
+{
+    $cafe = $_SESSION['cafe'];
+}else
+    {
+        $cafe = null;
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,12 +25,12 @@
     <title>JustOrder Company</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css"
-          rel="stylesheet">
+    <!--    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css"-->
+    <!--          rel="stylesheet">-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <!--    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script> -->
@@ -26,6 +41,9 @@
     <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHoROJoCnsD4-7gkV4uPWo0j4DwyyLRU4&libraries=places"></script>
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -60,13 +78,29 @@
             </div>
             <div id="collapsingNavbar2" class="navbar-collapse collapse w-25 order-2 dual-collapse2">
                 <ul class="navbar-nav justify-content-end ml-auto rightlinks">
-                    <li class="nav-item regli">
-                        <a id="reglink" class="nav-link" href="#" data-toggle="modal" data-target="#modal_reg">Регистация</a>
-                    </li>
-                    <li class="nav-item enterli">
-                        <a id="enterlink" class="nav-link" href="#" data-toggle="modal"
-                           data-target="#modal_login">Войти</a>
-                    </li>
+                    <?php if ($cafe != null) : ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img id="cafe_nav_logo" src="<?php echo "/images/cafelogos/".$cafe->getLogoName() ?>" alt="">
+                                <?php echo $cafe->getName() ?>
+                            </a>
+                            <div id="cafe_dropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#"><i class="fas fa-user-cog"></i>Личный кабинет</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/sside/logout.php?&logout=1"><i class="fas fa-door-open"></i>Выйти</a>
+                            </div>
+                        </li>
+                    <?php else : ?>
+                        <li class="nav-item regli">
+                            <a id="reglink" class="nav-link" href="#" data-toggle="modal" data-target="#modal_reg">Регистация</a>
+                        </li>
+                        <li class="nav-item enterli">
+                            <a id="enterlink" class="nav-link" href="#" data-toggle="modal"
+                               data-target="#modal_login">Войти</a>
+                        </li>
+                    <?php endif; ?>
+
                 </ul>
             </div>
 

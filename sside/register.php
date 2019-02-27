@@ -1,5 +1,6 @@
 <?php
 error_reporting(-1);
+
 ini_set('display_errors', 'On');
 require_once('../vendor/autoload.php');
 include('db.php');
@@ -8,10 +9,20 @@ $hasErrors = false;
 $errors = array();
 
 
-if(empty($_POST["email"]))
+
+if(empty($_POST["email"]) || !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
 {
     $errors[]="email";
-}
+}else
+    {
+        $email = $_POST["email"];
+        $sql = "SELECT * FROM `cafe` WHERE `email`='$email'";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result) > 0)
+        {
+            $errors[] = "email_already";
+        }
+    }
 
 if(empty($_POST["password"]) || strlen($_POST["password"]) < 8)
 {

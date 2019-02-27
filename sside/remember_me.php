@@ -1,9 +1,20 @@
 <?php
 //session_start();
 include('helpers/db_helper.php');
+
+//var_dump($_SESSION);
+if(isset($_SESSION['id']) && !isset($_SESSION['cafe']))
+{
+    echo "entered checkk";
+    $cafe = getCafeById($_SESSION['id'],$conn);
+    $_SESSION['cafe']=$cafe;
+    return;
+}
+
+
 if(!isset($_SESSION['id']) && !empty($_COOKIE['remember_me']))
 {
-    echo('enetered if in rem me');
+    echo('****  enetered if in rem me   *****');
     list($authentificator1, $authentificator2) = explode(',', $_COOKIE['remember_me']);
     $authentificator2 = hex2bin($authentificator2);
     $f2authentificator2 = hash('sha256', $authentificator2);
@@ -53,7 +64,7 @@ if(!isset($_SESSION['id']) && !empty($_COOKIE['remember_me']))
         exit;
     }
 
-    $cafe = getCafeById($cafe_id);
+    $cafe = getCafeById($cafe_id,$conn);
 
     $_SESSION['cafe']=$cafe;
 }

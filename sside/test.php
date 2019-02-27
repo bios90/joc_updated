@@ -1,7 +1,3 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: bios90
- * Date: 2019-02-27
- * Time: 19:42
- */
+session_start();
+session_destroy();
