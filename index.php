@@ -1,13 +1,18 @@
 <?php
 session_start();
+error_reporting(-1);
+ini_set('display_errors', 'On');
 include('sside/db.php');
 include('sside/models/Model_Cafe.php');
 include('sside/remember_me.php');
+
 if(isset($_SESSION['cafe']))
 {
-    $cafe = $_SESSION['cafe'];
+    echo "cafe not null";
+    $cafe = unserialize($_SESSION['cafe']);
 }else
     {
+        echo "cafe null";
         $cafe = null;
     }
 

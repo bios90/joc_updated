@@ -304,7 +304,7 @@ a:hover
     height: 100vh;
     min-height: 600px;
     background-position:50% 50%; 
-    background-size: cover;   
+    background-size:  cover;   
 }
 
 #enterlink
@@ -312,7 +312,7 @@ a:hover
     padding-left: 20px;
     padding-right: 20px;
     margin-right: 0px;
-    background-color: rgba(255, 255, 255, 20%);
+    background-color: rgba(255, 255, 255, 0.2);
     border-radius: 2px;
 }
 
@@ -332,7 +332,8 @@ a:hover
     color: white;
     font-size: 44px;
     font-weight: 700;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 22%);
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    /* text-shadow: 0px 2px 4px #000000; */
 }
 
 
@@ -347,7 +348,7 @@ a:hover
     padding: 5px 28px;
     display:inline-block;
     color: white;
-    background-color: rgba(0, 0, 0, 20%);
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 9999px;
 }
 
@@ -359,7 +360,7 @@ a:hover
     font-weight: 100;
     color: white;
     font-size: 12px;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 22%);
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .mybtn
@@ -372,7 +373,7 @@ a:hover
     color: white;
     background: linear-gradient(to right,#F51C1C, #FE8605);
     border-radius: 3px;
-    box-shadow: -2px 2px 12px rgba(0, 0, 0, 22%);
+    box-shadow: -2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 .mybtn:hover

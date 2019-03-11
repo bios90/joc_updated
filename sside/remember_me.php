@@ -7,7 +7,7 @@ if(isset($_SESSION['id']) && !isset($_SESSION['cafe']))
 {
     echo "entered checkk";
     $cafe = getCafeById($_SESSION['id'],$conn);
-    $_SESSION['cafe']=$cafe;
+    $_SESSION['cafe']=serialize($cafe);
     return;
 }
 
@@ -66,7 +66,7 @@ if(!isset($_SESSION['id']) && !empty($_COOKIE['remember_me']))
 
     $cafe = getCafeById($cafe_id,$conn);
 
-    $_SESSION['cafe']=$cafe;
+    $_SESSION['cafe']= serialize($cafe);
 }
 
 function f1($a, $b)
