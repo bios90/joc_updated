@@ -51,7 +51,7 @@ if(isset($_SESSION['cafe']))
 
 </head>
 
-<body>
+<body class="index">
 
 
 <!-- Nav Bar!!!!! -->
@@ -59,9 +59,9 @@ if(isset($_SESSION['cafe']))
 <section id="section_navbar">
     <div class="container">
         <nav class="navbar navbar-expand-lg sticky-top">
-            <div class="d-flex w-25 order-0">
-                <a class="navbar-brand mr-1" href="#">JOC</a>
-                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target=".navbar-collapse">
+            <div class="d-flex w-25 order-0 nav_on_md">
+                <a class="navbar-brand mr-1" href="/">JOC</a>
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target=".navbar-collapse">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -85,13 +85,13 @@ if(isset($_SESSION['cafe']))
                 <ul class="navbar-nav justify-content-end ml-auto rightlinks">
                     <?php if ($cafe != null) : ?>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            <a class="nav-link dropdown-toggle text-center" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img id="cafe_nav_logo" src="<?php echo "/images/cafelogos/".$cafe->getLogoName() ?>" alt="">
-                                <?php echo $cafe->getName() ?>
+                                <img id="cafe_nav_logo" src="<?php echo "/images/cafelogos/".$cafe->logo_name ?>" alt="">
+                                <?php echo $cafe->name ?>
                             </a>
                             <div id="cafe_dropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#"><i class="fas fa-user-cog"></i>Личный кабинет</a>
+                                <a class="dropdown-item" href="/cafe_page.php"><i class="fas fa-user-cog"></i>Личный кабинет</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/sside/logout.php?&logout=1"><i class="fas fa-door-open"></i>Выйти</a>
                             </div>
@@ -463,7 +463,7 @@ if(isset($_SESSION['cafe']))
                                 <div id="file_input_div" class="form-control" style="float: left">
                                     <p id="icon_upload">
                                         <i id="upd" class="fas fa-upload"></i>
-                                        <img id="logo_logo" src="" alt="">
+                                        <img id="logo_logo" class="invisible" src="" alt="">
                                     </p>
                                     <input type="file" class="form-control my_input" id="reg_cafe_logo"
                                            name="logo">
@@ -541,10 +541,7 @@ if(isset($_SESSION['cafe']))
                 </div>
             </div>
         </div>
-
-
     </div>
-
 </section>
 
 <!-- ************END HERO SECTION**************** -->
@@ -738,7 +735,6 @@ if(isset($_SESSION['cafe']))
                 <p></p>
             </div>
         </div>
-
     </div>
 
 

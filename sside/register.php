@@ -1,9 +1,8 @@
 <?php
 error_reporting(-1);
-
 ini_set('display_errors', 'On');
-require_once('../vendor/autoload.php');
-include('db.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/sside/db.php');
 
 $hasErrors = false;
 $errors = array();
@@ -78,7 +77,7 @@ else
     }
 }
 
-if(empty($_POST["minute_ot"]))
+if(empty($_POST["minute_ot"]) && $_POST["minute_ot"] != 0)
 {
     $errors[]="minute_ot";
 }
@@ -104,7 +103,7 @@ else
     }
 }
 
-if(empty($_POST["minute_do"]))
+if(empty($_POST["minute_do"]) && $_POST["minute_do"] != 0)
 {
     $errors[]="minute_do";
 }
@@ -209,11 +208,12 @@ $hour_do = mysqli_real_escape_string($conn, $hour_do);
 $minute_do = mysqli_real_escape_string($conn, $minute_do);
 $inn = mysqli_real_escape_string($conn, $inn);
 
+
 $password = hash('sha256', $password);
 
 
-$sql = "INSERT INTO `cafe`( `email`, `password`, `name`, `ooo`, `adress_ur`, `adress_fact`, `dirfio`, `phone`, `inn`, `hour_ot`, `minute_ot`, `hour_do`, `minute_do`, `logo_name`, `status`) 
-VALUES ('$email','$password','$name','$ooo','$adress_ur','$adress_fact','$dirfio','$phone','$inn',$hour_ot,$minute_ot,$hour_do,$minute_do,'$randName',0)";
+$sql = "INSERT INTO `cafe`( `email`, `password`, `name`, `ooo`,`okpo`, `adress_ur`, `adress_fact`, `dirfio`, `phone`, `inn`, `hour_ot`, `minute_ot`, `hour_do`, `minute_do`, `logo_name`, `status`) 
+VALUES ('$email','$password','$name','$ooo','$okpo','$adress_ur','$adress_fact','$dirfio','$phone','$inn',$hour_ot,$minute_ot,$hour_do,$minute_do,'$randName',0)";
 
 $result = mysqli_query($conn, $sql);
 if(!$result)

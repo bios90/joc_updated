@@ -30,6 +30,7 @@ $(document).ready(function ()
         var dataToSend = new FormData(this);
         console.log($(this).serializeArray());
 
+
         $.ajax(
             {
                 url: "/sside/register.php",
@@ -40,7 +41,6 @@ $(document).ready(function ()
                 {
                     console.log(data);
                     data = $.parseJSON(data);
-
 
                     if ($.inArray('failed', data) > -1)
                     {
@@ -93,7 +93,6 @@ $(document).ready(function ()
 
                     if($.inArray('success', data) > -1)
                     {
-                        console.log("succc");
                         window.location.reload(true);
                     }
 
@@ -119,6 +118,7 @@ $(document).ready(function ()
 
             reader.onload = function (e)
             {
+                $('#logo_logo').removeClass('invisible');
                 $('#logo_logo').attr('src', e.target.result);
             }
 

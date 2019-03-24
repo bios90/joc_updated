@@ -8,21 +8,22 @@
 
 class Model_Cafe
 {
-    private $id;
-    private $email;
-    private $name;
-    private $ooo;
-    private $adress_ur;
-    private $adress_fact;
-    private $dirfio;
-    private $phone;
-    private $inn;
-    private $hour_ot;
-    private $minute_ot;
-    private $hour_do;
-    private $minute_do;
-    private $logo_name;
-    private $status;
+    public $id;
+    public $email;
+    public $name;
+    public $ooo;
+    public $okpo;
+    public $adress_ur;
+    public $adress_fact;
+    public $dirfio;
+    public $phone;
+    public $inn;
+    public $hour_ot;
+    public $minute_ot;
+    public $hour_do;
+    public $minute_do;
+    public $logo_name;
+    public $status;
 
     /**
      * Model_Cafe constructor.
@@ -67,7 +68,7 @@ class Model_Cafe
     /**
      * @return mixed
      */
-    public function getName()
+    public function public ()
     {
         return $this->name;
     }
@@ -271,6 +272,25 @@ class Model_Cafe
     {
         $this->status = $status;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getOkpo()
+    {
+        return $this->okpo;
+    }
+
+    /**
+     * @param mixed $okpo
+     */
+    public function setOkpo($okpo)
+    {
+        $this->okpo = $okpo;
+    }
+
+
+
 
 
 }
