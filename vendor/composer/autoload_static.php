@@ -10,6 +10,7 @@ class ComposerStaticInit11b1fac98bf41e8bb72d3b37b645da5e
         'P' => 
         array (
             'PragmaRX\\Random\\' => 16,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
     );
 
@@ -17,6 +18,10 @@ class ComposerStaticInit11b1fac98bf41e8bb72d3b37b645da5e
         'PragmaRX\\Random\\' => 
         array (
             0 => __DIR__ . '/..' . '/pragmarx/random/src',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
     );
 

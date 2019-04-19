@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'PragmaRX\\Random\\' => array($vendorDir . '/pragmarx/random/src'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
 );

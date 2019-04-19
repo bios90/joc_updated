@@ -1,5 +1,6 @@
 {
     "require": {
-        "pragmarx/random": "^0.2.2"
+        "pragmarx/random": "^0.2.2",
+        "phpmailer/phpmailer": "^6.0"
     }
 }

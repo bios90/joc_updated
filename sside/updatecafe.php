@@ -118,8 +118,6 @@ if(count($errors) > 0)
     exit;
 }
 
-exit;
-
 
 $cafe_id = mysqli_real_escape_string($conn, $_POST['cafe_id']);
 $cafe = getCafeById($cafe_id,$conn);

@@ -11,6 +11,15 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/sside/models/Model_Add.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sside/models/Model_Weight.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/sside/models/Model_Milk.php');
 
+
+function getCafeFromRow($row)
+{
+    $cafe = new Model_Cafe();
+    $cafe->setData($row);
+
+    return $cafe;
+}
+
 function getCafeById($id,$conn)
 {
     $sql = "SELECT * FROM `cafe` WHERE `id`=$id";
@@ -309,3 +318,5 @@ function insertPostMilks($product_id)
 
     return true;
 }
+
+

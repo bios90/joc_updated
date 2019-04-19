@@ -25,6 +25,17 @@ class Model_Cafe
     public $logo_name;
     public $status;
 
+    function setData($data)
+    {
+        foreach ($data as $key => $value)
+        {
+            if(property_exists($this, $key))
+            {
+                $this->$key = $value;
+            }
+        }
+    }
+
     /**
      * Model_Cafe constructor.
      */

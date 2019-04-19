@@ -27,7 +27,7 @@ if(isset($_SESSION['cafe']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi"/>
-    <title>JustOrder Company</title>
+    <title>Just Order Company</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <!--    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css"-->
@@ -56,7 +56,16 @@ if(isset($_SESSION['cafe']))
 
 <!-- Nav Bar!!!!! -->
 
-<section id="section_navbar">
+<section id="section_navbar" data-logged="<?php 
+if($cafe == null)
+{
+    echo 0;
+}
+else
+{
+    echo 1;
+}
+?>">
     <div class="container">
         <nav class="navbar navbar-expand-lg sticky-top">
             <div class="d-flex w-25 order-0 nav_on_md">
@@ -220,6 +229,10 @@ if(isset($_SESSION['cafe']))
                             <div id="err_div_password_login" class="col-sm-12 col-lg-3 invisible err_div">
                                 <i class="fas fa-exclamation-circle error_icon"></i>
                                 <p class="input_error"></p>
+                            </div>
+
+                            <div class="p-0 align-self-center m-auto text-">
+                                <small><a href="/forgotpass.php">Забыли Пароль?</a></small>
                             </div>
                         </div>
                     </div>
@@ -501,7 +514,7 @@ if(isset($_SESSION['cafe']))
                                 <input id="cheb" type="checkbox" name="agree" value="true">
                                 <label for="cheb"></label>
                                 <p id="cheb_text">Я согласен с условиями <a href="">договора*</a></p>
-                                <input type="submit" class="mybtn w-100 mt-0 mb-0" href="" value="Подключить">
+                                <input type="submit" class="mybtn w-100 mt-0 mb-0" value="Подключить">
                             </div>
                         </div>
                     </div>
@@ -531,7 +544,7 @@ if(isset($_SESSION['cafe']))
                     года. Нет желания создавать собственную систему мобильных приложений? Подключите наш сервис и
                     встречайте тысячи новых лояльных покупателей!</p>
                 <div class="text-center">
-                    <a class="mybtn" href="">Подключить</a>
+                    <a id="btn_connect"  class="mybtn text-white" >Подключить</a>
                 </div>
                 <div class="partners_row">
                     <div id="partner1" class="partner_div"></div>
@@ -550,8 +563,31 @@ if(isset($_SESSION['cafe']))
 <!-- ************ Sub-Hero section **************** -->
 
 <section class="section_subhero">
+
     <div class="container">
         <div class="row">
+
+        <div class="col-12">
+            <h2 class="title_subhero">О нас</h2>
+            <p class="about_text">Integer eget aliquet nibh praesent tristique magna sit amet purus gravida quis blandit
+                turpis cursus in hac habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat mauris
+                nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit
+                amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum
+                lectus mauris ultrices eros in cursus turpis massa tincidunt dui ut ornare lectus sit amet est placerat
+                in egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor leo a diam
+                sollicitudin tempor id eu nisl nunc.</p>
+            <p class="about_text">Tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu
+                lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus
+                elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum
+                morbi blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget
+                gravida cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae
+                ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis
+                volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit
+                adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis
+                imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc
+                consequat interdum varius.</p>
+        </div>
+
             <div class="col-12">
                 <h2 class="title_subhero">Преимущества</h2>
             </div>
@@ -587,26 +623,7 @@ if(isset($_SESSION['cafe']))
         </div>
 
 
-        <div class="col-12">
-            <h2 class="title_subhero">О нас</h2>
-            <p class="about_text">Integer eget aliquet nibh praesent tristique magna sit amet purus gravida quis blandit
-                turpis cursus in hac habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat mauris
-                nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit
-                amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum
-                lectus mauris ultrices eros in cursus turpis massa tincidunt dui ut ornare lectus sit amet est placerat
-                in egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor leo a diam
-                sollicitudin tempor id eu nisl nunc.</p>
-            <p class="about_text">Tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu
-                lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus
-                elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum
-                morbi blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget
-                gravida cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae
-                ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis
-                volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit
-                adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis
-                imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc
-                consequat interdum varius.</p>
-        </div>
+
 
         <div class="col-12">
             <h2 class="title_subhero">Подключение</h2>
@@ -615,7 +632,7 @@ if(isset($_SESSION['cafe']))
 
         <div style="height: 100px;" class="col-md-6 col-xs-12 offset-md-4 step_row">
 
-            <div id="line">
+            <div class="d-none d-xl-block" id="line">
 
             </div>
 
@@ -681,6 +698,7 @@ if(isset($_SESSION['cafe']))
 
 
     </div>
+    </div>
 </section>
 
 
@@ -721,7 +739,7 @@ if(isset($_SESSION['cafe']))
             </div>
 
             <div class="col-12">
-                <p class="bottom_footer">Justorder Company 2019 ® All Rights Recieved</p>
+                <p class="bottom_footer">Just Order Company 2019 ® All Rights Recieved</p>
             </div>
 
         </div>
@@ -743,7 +761,7 @@ if(isset($_SESSION['cafe']))
 
 <!-- ************END Footer SECTION**************** -->
 
-<script src="js/index.js"></script>
+<script src="js/index.js?t=52453"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>

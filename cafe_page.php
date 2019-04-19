@@ -27,7 +27,7 @@ if (isset($_SESSION['cafe']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport"
           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi"/>
-    <title>JustOrder Company</title>
+    <title>Just Order Company</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <!--    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css"-->
@@ -45,7 +45,7 @@ if (isset($_SESSION['cafe']))
 
     <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHoROJoCnsD4-7gkV4uPWo0j4DwyyLRU4&libraries=places"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css?t=52342324234312323423" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
@@ -1051,7 +1051,7 @@ if (isset($_SESSION['cafe']))
                     <div class="col-sm-12 col-lg-3 text-center pl-3">
 
 
-                        <img id="img_cafe_logo" class="m-auto d-block" src="images/fakelogo3.png" alt="">
+                        <img id="img_cafe_logo" class="m-auto d-block" src="<?= "/images/cafelogos/" . $cafe->logo_name ?>" alt="">
                         <img id="img_cafe_rating" class="mt-2 mb-3" src="images/rating.png" alt="">
                         <br/>
                         <p class="p_left_text pl-3 text-left d-inline-block w-50 mb-2">Всего заказов:</p>
@@ -1233,7 +1233,7 @@ if (isset($_SESSION['cafe']))
             </div>
 
             <div class="col-12">
-                <p class="bottom_footer">Justorder Company 2019 ® All Rights Recieved</p>
+                <p class="bottom_footer">Just Order Company 2019 ® All Rights Recieved</p>
             </div>
 
         </div>
@@ -1257,7 +1257,7 @@ if (isset($_SESSION['cafe']))
 <!-- ************END Footer SECTION**************** -->
 
 
-<script src="js/cafe_page.js"></script>
+<script src="js/cafe_page.js?t=5613132424"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
