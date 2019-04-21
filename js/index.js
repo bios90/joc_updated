@@ -160,16 +160,28 @@ function clearInputs() {
 }
 
 function showLoginErrors(data) {
+
+    let message;
+    if($.inArray('status',data) > -1)
+    {
+        message='Ваша зявка находится на рассмотрении';
+    }
+    else
+        {
+            message = 'Проверьте введенные данные';
+        }
+
     let err_div_login = $("#err_div_login");
     err_div_login.removeClass("invisible");
     let par = err_div_login.find("p").first();
     let input = $("#login_inputs_container").find("input");
-    par.text("Проверьте введенные данные");
+    par.text(message);
     input.addClass("input_box_error");
 }
 
 function showErrors(data) {
     console.log(data);
+
     if ($.inArray("email", data) > -1 || $.inArray("email_already", data) > -1) {
         err_div_email.removeClass("invisible");
         let par = err_div_email.find("p").first();
@@ -397,4 +409,18 @@ function showErrors(data) {
         par.text("");
         input.removeClass("input_box_error");
     }
+}
+
+
+function showStatusError() {
+    $("#my_alert").addClass("alert-warning");
+    $("#alert-fixed").removeClass("invisible");
+    let par = $("#my_alert")
+        .find("p")
+        .first();
+    par.html("Ваша заявка находится на рассмотрении.");
+    $("#my_alert")
+        .show()
+        .delay(3500)
+        .fadeOut();
 }

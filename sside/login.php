@@ -50,6 +50,15 @@ if ($count !== 1)
 }
 
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+if($row['status'] == 0)
+{
+    $errors[] = 'status';
+    array_unshift($errors, 'failed');
+    echo json_encode($errors);
+    exit;
+}
+
 $id = $row['id'];
 $_SESSION['id'] = $id;
 

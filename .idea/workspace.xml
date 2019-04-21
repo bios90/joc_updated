@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="776ae393-57b5-4972-8374-0d28dcea2997" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/js/newspage/loadnews.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sside/getallnewsuser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sside/getallnewsuser2.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sside/getfullcafeinfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpanel.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpanel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cafe_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/cafe_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forgotpass.php" beforeDir="false" afterPath="$PROJECT_DIR$/forgotpass.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/adminpanel/cafes_tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/adminpanel/cafes_tab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sside/getcafetable.php" beforeDir="false" afterPath="$PROJECT_DIR$/sside/getcafetable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sside/helpers/db_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/sside/helpers/db_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sside/remember_me.php" beforeDir="false" afterPath="$PROJECT_DIR$/sside/remember_me.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sside/updatecafe.php" beforeDir="false" afterPath="$PROJECT_DIR$/sside/updatecafe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sside/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/sside/login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,11 +29,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/adminpanel/cafes_tab.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
+            <state relative-caret-position="160">
               <caret line="223" column="7" selection-start-line="223" selection-start-column="7" selection-end-line="223" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sside/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="208" column="87" selection-start-line="208" selection-start-column="87" selection-end-line="208" selection-end-column="87" />
+              <folding>
+                <element signature="e#2659#2664#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="177" column="22" lean-forward="true" selection-start-line="177" selection-start-column="22" selection-end-line="177" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -100,33 +118,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sside/getcafetable.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="40" column="19" lean-forward="true" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="1555" column="1" lean-forward="true" selection-start-line="1555" selection-start-column="1" selection-end-line="1555" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sside/models/Model_Cafe.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" column="18" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -139,9 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>logo_new</find>
-      <find>sort</find>
-      <find>all_cafe</find>
       <find>удалит</find>
       <find>is</find>
       <find>Json.</find>
@@ -169,6 +157,9 @@
       <find>getCafeById</find>
       <find>text_middle</find>
       <find>update</find>
+      <find>my</find>
+      <find>showStat</find>
+      <find>login</find>
     </findStrings>
     <replaceStrings>
       <replace>lg-6</replace>
@@ -184,7 +175,6 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/sside/remember.me.php" />
         <option value="$PROJECT_DIR$/sside/logout.php" />
-        <option value="$PROJECT_DIR$/sside/login.php" />
         <option value="$PROJECT_DIR$/cafe_page.html" />
         <option value="$PROJECT_DIR$/sside/get_products.php" />
         <option value="$PROJECT_DIR$/sside/models/Model_Drink.php" />
@@ -194,7 +184,6 @@
         <option value="$PROJECT_DIR$/sside/add_desert.php" />
         <option value="$PROJECT_DIR$/sside/register.php" />
         <option value="$PROJECT_DIR$/sside/test.php" />
-        <option value="$PROJECT_DIR$/js/index.js" />
         <option value="$PROJECT_DIR$/sside/getproducts.php" />
         <option value="$PROJECT_DIR$/sside/getproductbyid.php" />
         <option value="$PROJECT_DIR$/sside/addproduct.php" />
@@ -220,7 +209,6 @@
         <option value="$PROJECT_DIR$/sside/getallnewsuser.php" />
         <option value="$PROJECT_DIR$/js/newspage/loadnews.js" />
         <option value="$PROJECT_DIR$/newspage.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/forgotpass.php" />
         <option value="$PROJECT_DIR$/cafe_page.php" />
         <option value="$PROJECT_DIR$/sside/getallnewsuser2.php" />
@@ -232,6 +220,9 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/sside/getfullcafeinfo.php" />
         <option value="$PROJECT_DIR$/js/adminpanel/cafes_tab.js" />
+        <option value="$PROJECT_DIR$/sside/login.php" />
+        <option value="$PROJECT_DIR$/js/index.js" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -351,12 +342,12 @@
       <workItem from="1553434342363" duration="7714000" />
       <workItem from="1555711086965" duration="8279000" />
       <workItem from="1555751929305" duration="30608000" />
-      <workItem from="1555840609557" duration="9456000" />
+      <workItem from="1555840609557" duration="10463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208696000" />
+    <option name="totallyTimeSpent" value="209703000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -384,7 +375,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -535,13 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="156" column="8" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sside/updatestatus.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -553,13 +537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sside/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="53" column="8" selection-start-line="53" selection-start-column="2" selection-end-line="53" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -621,16 +598,6 @@
           <caret line="71" column="61" lean-forward="true" selection-start-line="71" selection-start-column="61" selection-end-line="71" selection-end-column="74" />
           <folding>
             <element signature="n#section#1;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="83" column="63" selection-start-line="83" selection-start-column="63" selection-end-line="83" selection-end-column="63" />
-          <folding>
-            <element signature="e#2659#2664#0#PHP" />
           </folding>
         </state>
       </provider>
@@ -754,8 +721,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/adminpanel/cafes_tab.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
+        <state relative-caret-position="160">
           <caret line="223" column="7" selection-start-line="223" selection-start-column="7" selection-end-line="223" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="177" column="22" lean-forward="true" selection-start-line="177" selection-start-column="22" selection-end-line="177" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sside/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="208" column="87" selection-start-line="208" selection-start-column="87" selection-end-line="208" selection-end-column="87" />
+          <folding>
+            <element signature="e#2659#2664#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>

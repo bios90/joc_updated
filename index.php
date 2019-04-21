@@ -206,7 +206,7 @@ else
 
                             <div id="err_div_login" class="col-sm-12 invisible err_div text-center">
                                 <div style="display: inline-block">
-                                    <i class="fas fa-exclamation-circle error_icon"></i>
+                                    <i class="fas fa-exclamation-circle error_icon mt-2"></i>
                                     <p class="input_error"></p>
                                 </div>
                             </div>
