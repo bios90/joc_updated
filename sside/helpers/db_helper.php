@@ -21,8 +21,10 @@ function getCafeFromRow($row)
     return $cafe;
 }
 
-function getCafeById($id, $conn)
+function getCafeById($id)
 {
+    global $conn;
+
     $sql = "SELECT * FROM `cafe` WHERE `id`=$id";
     $result = mysqli_query($conn, $sql);
     if (!$result)
@@ -33,22 +35,6 @@ function getCafeById($id, $conn)
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $cafe = new Model_Cafe();
     $cafe->setData($row);
-//    $cafe->setId($row['id']);
-//    $cafe->setEmail($row['email']);
-//    $cafe->setName($row['name']);
-//    $cafe->setOoo($row['ooo']);
-//    $cafe->setOkpo($row['okpo']);
-//    $cafe->setAdressUr($row['adress_ur']);
-//    $cafe->setAdressFact($row['adress_fact']);
-//    $cafe->setDirfio($row['dirfio']);
-//    $cafe->setPhone($row['phone']);
-//    $cafe->setInn($row['inn']);
-//    $cafe->setHourOt($row['hour_ot']);
-//    $cafe->setHourDo($row['hour_do']);
-//    $cafe->setMinuteOt($row['minute_ot']);
-//    $cafe->setMinuteDo($row['minute_do']);
-//    $cafe->setLogoName($row['logo_name']);
-//    $cafe->setStatus($row['status']);
 
     return $cafe;
 }

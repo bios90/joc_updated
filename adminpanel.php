@@ -69,7 +69,7 @@ if (isset($_SESSION['cafe']))
                         <a class="nav-link" href="#">О нас</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="//codeply.com">Новости</a>
+                        <a class="nav-link" href="/newspage.php">Новости</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Приложения</a>
@@ -93,6 +93,14 @@ if (isset($_SESSION['cafe']))
                             <div id="cafe_dropdown" class="dropdown-menu dropdown-menu-right"
                                  aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#"><i class="fas fa-user-cog"></i>Личный кабинет</a>
+
+
+                                <?php if ($cafe->is_admin == 1): ?>
+                                    <a class="dropdown-item" href="/adminpanel.php"><i class="fas fa-tools"></i>Панель
+                                        Администратора</a>
+                                <?php endif; ?>
+
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/sside/logout.php?&logout=1"><i
                                             class="fas fa-door-open"></i>Выйти</a>
@@ -167,97 +175,100 @@ if (isset($_SESSION['cafe']))
         <div class="tab-content" id="myTabContent">
 
             <!--        Tab All Cafessss        -->
+
             <div id="tab_all_cafe" class="tab-pane fade show active" role="tabpanel" aria-labelledby="">
-                <div class="row">
+                <!--                <div class="row">-->
+                <!---->
+                <!--                    <div class="col">-->
 
-                    <div class="col">
+                <div class="table-responsive mytable_responsive">
+                    <table id="all_cafes_table" class="table table-borderless invisible">
+                        <thead style="display: block">
+                        <tr>
+                            <th class="column-name" style="width: 91px;"></th>
+                            <th class="column-name text-center"><a class="thead_link" href="" id="sort_cafe">Кафе</a>
+                            </th>
+                            <th class="column-adress text-center"><a class="thead_link" href=""
+                                                                     id="sort_adress">Адрес</a></th>
+                            <th class="column-dir text-center"><a class="thead_link" href=""
+                                                                  id="sort_dir">Представитель</a>
+                            </th>
+                            <th class="column-phone text-center"><a class="thead_link" href=""
+                                                                    id="sort_phone">Телефон</a>
+                            </th>
+                            <th class="column-email text-center"><a class="thead_link" href="" id="sort_email">Email</a>
+                            </th>
+                            <th class="column-status text-center"><a class="thead_link" href=""
+                                                                     id="sort_status">Статус</a></th>
 
-                        <div class="table-responsive" style="overflow: visible">
-                            <table id="all_cafes_table" class="table table-borderless invisible">
-                                <thead style="display: block">
-                                <tr>
-                                    <th class="column-name" style="width: 91px;"></th>
-                                    <th class="column-name text-center"><a class="thead_link" href="" id="sort_cafe">Кафе</a>
-                                    </th>
-                                    <th class="column-adress text-center"><a class="thead_link" href=""
-                                                                             id="sort_adress">Адрес</a></th>
-                                    <th class="column-dir text-center"><a class="thead_link" href="" id="sort_dir">Представитель</a>
-                                    </th>
-                                    <th class="column-phone text-center"><a class="thead_link" href="" id="sort_phone">Телефон</a>
-                                    </th>
-                                    <th class="column-email text-center"><a class="thead_link" href="" id="sort_email">Email</a>
-                                    </th>
-                                    <th class="column-status text-center"><a class="thead_link" href=""
-                                                                             id="sort_status">Статус</a></th>
+                        </tr>
+                        </thead>
 
-                                </tr>
-                                </thead>
-
-                                <tbody id="allcafes_tbody" class="py-2">
-
-
-                                <!--                                <tr class="cafe_row">-->
-                                <!--                                    <td class="text-center p-0">-->
-                                <!--                                        <div class="p-2 text-center column-logo">-->
-                                <!--                                            <img class="table_logo" src="http://shoko-vs.ru/images/logo1.png" alt="">-->
-                                <!--                                        </div>-->
-                                <!--                                    </td>-->
-                                <!--                                    <td class="column-name text-center">-->
-                                <!--                                        <p class="p-2" data-toggle="tooltip" data-placement="top" title="">-->
-                                <!--                                            Шоколадница</p>-->
-                                <!--                                    </td>-->
-                                <!--                                    <td class="column-adress text-center">-->
-                                <!--                                        <p class="p-2" data-toggle="tooltip" data-placement="top" title="">ул Есенина д-->
-                                <!--                                            15</p>-->
-                                <!--                                    </td>-->
-                                <!--                                    <td class="column-dir text-center">-->
-                                <!--                                        <p class="p-2" data-toggle="tooltip" data-placement="top" title="">Иванов Иван-->
-                                <!--                                            Иванович</p>-->
-                                <!--                                    </td>-->
-                                <!--                                    <td class="column-phone text-center">-->
-                                <!--                                        <p class="p-2"><a href="tel:+7(999)7773333">+7(999)7773333</a></p>-->
-                                <!--                                    </td>-->
-                                <!--                                    <td class="column-email text-center">-->
-                                <!--                                        <p class="p-2"><a href="mailto:+7(999)7773333">bios90@mail.ru</a></p>-->
-                                <!--                                    </td>-->
-                                <!--                                    <td class="column-status text-center">-->
-                                <!--                                        <button href="" class="btn-status mx-auto" data-cafe-id="">Одобрен</button>-->
-                                <!--                                    </td>-->
-                                <!--                                </tr>-->
-                                <!--                                <tr class="cafe_row">-->
-                                <!--                                    <td class="text-center p-0">-->
-                                <!--                                        <div class="p-2 text-center column-logo">-->
-                                <!--                                            <img class="table_logo" src="http://shoko-vs.ru/images/logo1.png" alt="">-->
-                                <!--                                        </div>-->
-                                <!--                                    </td>-->
-                                <!--                                    <td class="column-name text-center">-->
-                                <!--                                        <p class="p-2">Шоколадница</p>-->
-                                <!--                                    </td>-->
-                                <!--                                    <td class="column-adress text-center">-->
-                                <!--                                        <p class="p-2">ул Есенина д 15</p>-->
-                                <!--                                    </td>-->
-                                <!--                                    <td class="column-dir text-center">-->
-                                <!--                                        <p class="p-2">Иванов Иван Иванович</p>-->
-                                <!--                                    </td>-->
-                                <!--                                    <td class="column-phone text-center">-->
-                                <!--                                        <p class="p-2"><a href="tel:+7(999)7773333">+7(999)7773333</a></p>-->
-                                <!--                                    </td>-->
-                                <!--                                    <td class="column-email text-center">-->
-                                <!--                                        <p class="p-2"><a href="mailto:+7(999)7773333">bios90@mail.ru</a></p>-->
-                                <!--                                    </td>-->
-                                <!--                                    <td class="column-status text-center">-->
-                                <!--                                        <button href="" class="btn-status mx-auto" data-cafe-id="">Одобрен</button>-->
-                                <!--                                    </td>-->
-                                <!--                                </tr>-->
+                        <tbody id="allcafes_tbody" class="py-2 shadow-sm">
 
 
-                                </tbody>
-                            </table>
-                        </div>
+                        <!--                                <tr class="cafe_row">-->
+                        <!--                                    <td class="text-center p-0">-->
+                        <!--                                        <div class="p-2 text-center column-logo">-->
+                        <!--                                            <img class="table_logo" src="http://shoko-vs.ru/images/logo1.png" alt="">-->
+                        <!--                                        </div>-->
+                        <!--                                    </td>-->
+                        <!--                                    <td class="column-name text-center">-->
+                        <!--                                        <p class="p-2" data-toggle="tooltip" data-placement="top" title="">-->
+                        <!--                                            Шоколадница</p>-->
+                        <!--                                    </td>-->
+                        <!--                                    <td class="column-adress text-center">-->
+                        <!--                                        <p class="p-2" data-toggle="tooltip" data-placement="top" title="">ул Есенина д-->
+                        <!--                                            15</p>-->
+                        <!--                                    </td>-->
+                        <!--                                    <td class="column-dir text-center">-->
+                        <!--                                        <p class="p-2" data-toggle="tooltip" data-placement="top" title="">Иванов Иван-->
+                        <!--                                            Иванович</p>-->
+                        <!--                                    </td>-->
+                        <!--                                    <td class="column-phone text-center">-->
+                        <!--                                        <p class="p-2"><a href="tel:+7(999)7773333">+7(999)7773333</a></p>-->
+                        <!--                                    </td>-->
+                        <!--                                    <td class="column-email text-center">-->
+                        <!--                                        <p class="p-2"><a href="mailto:+7(999)7773333">bios90@mail.ru</a></p>-->
+                        <!--                                    </td>-->
+                        <!--                                    <td class="column-status text-center">-->
+                        <!--                                        <button href="" class="btn-status mx-auto" data-cafe-id="">Одобрен</button>-->
+                        <!--                                    </td>-->
+                        <!--                                </tr>-->
+                        <!--                                <tr class="cafe_row">-->
+                        <!--                                    <td class="text-center p-0">-->
+                        <!--                                        <div class="p-2 text-center column-logo">-->
+                        <!--                                            <img class="table_logo" src="http://shoko-vs.ru/images/logo1.png" alt="">-->
+                        <!--                                        </div>-->
+                        <!--                                    </td>-->
+                        <!--                                    <td class="column-name text-center">-->
+                        <!--                                        <p class="p-2">Шоколадница</p>-->
+                        <!--                                    </td>-->
+                        <!--                                    <td class="column-adress text-center">-->
+                        <!--                                        <p class="p-2">ул Есенина д 15</p>-->
+                        <!--                                    </td>-->
+                        <!--                                    <td class="column-dir text-center">-->
+                        <!--                                        <p class="p-2">Иванов Иван Иванович</p>-->
+                        <!--                                    </td>-->
+                        <!--                                    <td class="column-phone text-center">-->
+                        <!--                                        <p class="p-2"><a href="tel:+7(999)7773333">+7(999)7773333</a></p>-->
+                        <!--                                    </td>-->
+                        <!--                                    <td class="column-email text-center">-->
+                        <!--                                        <p class="p-2"><a href="mailto:+7(999)7773333">bios90@mail.ru</a></p>-->
+                        <!--                                    </td>-->
+                        <!--                                    <td class="column-status text-center">-->
+                        <!--                                        <button href="" class="btn-status mx-auto" data-cafe-id="">Одобрен</button>-->
+                        <!--                                    </td>-->
+                        <!--                                </tr>-->
 
-                    </div>
 
+                        </tbody>
+                    </table>
                 </div>
+
+                <!--                    </div>-->
+                <!---->
+                <!--                </div>-->
             </div>
 
 
@@ -265,54 +276,53 @@ if (isset($_SESSION['cafe']))
             <div id="tab_news" class="tab-pane fade show" role="tabpanel" aria-labelledby="">
 
 
-
-<!--                <div class="shadow my_rounded8 bg-white mt-3">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-md-4">-->
-<!--                            <img class="news_img_show" src="https://truffle-assets.imgix.net/pxqrocxwsjcc_4mlylloieeiqmyecgk0qq8_rose%CC%81-champagne-cupcakes-landscape-no-graphic.jpg"/>-->
-<!--                        </div>-->
-<!---->
-<!--                        <div class="col-md-8">-->
-<!---->
-<!--                            <div class="p-4">-->
-<!--                                <h3 class="news_title_show text-center mt-4">Открытие нового кафе</h3>-->
-<!--                                <p class="news_time_show mt-4 mb-0">22.06.2019</p>-->
-<!--                                <p class="news_text_show">vehicula ipsum a arcu cursus vitae congue mauris rhoncus-->
-<!--                                    aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi-->
-<!--                                    tristique senectus et netus et malesuada fames ac turpis egestas maecenas pharetra-->
-<!--                                    convallis posuere morbi leo urna molestie at elementum eu facilisis sed odio morbi-->
-<!--                                    quis commodo odio aenean sed adipiscing</p>-->
-<!---->
-<!--                                <button class="btn-edit-news d-block ml-auto" data-news-id=""><i-->
-<!--                                            class="fas fa-pencil-alt mr-1"></i> <span>Редактировать</span>-->
-<!--                                </button>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!---->
-<!---->
-<!--                <div class="shadow my_rounded8 bg-white mt-2">-->
-<!--                    <div class="row">-->
-<!---->
-<!--                        <div class="col">-->
-<!---->
-<!--                            <div class="p-4">-->
-<!--                                <h3 class="news_title_show text-center mt-4">Открытие нового кафе</h3>-->
-<!--                                <p class="news_time_show mt-4 mb-0">22.06.2019</p>-->
-<!--                                <p class="news_text_show">vehicula ipsum a arcu cursus vitae congue mauris rhoncus-->
-<!--                                    aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi-->
-<!--                                    tristique senectus et netus et malesuada fames ac turpis egestas maecenas pharetra-->
-<!--                                    convallis posuere morbi leo urna molestie at elementum eu facilisis sed odio morbi-->
-<!--                                    quis commodo odio aenean sed adipiscing</p>-->
-<!---->
-<!--                                <button class="btn-edit-news d-block ml-auto" data-news-id=""><i-->
-<!--                                            class="fas fa-pencil-alt mr-1"></i> <span>Редактировать</span>-->
-<!--                                </button>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <!--                <div class="shadow my_rounded8 bg-white mt-3">-->
+                <!--                    <div class="row">-->
+                <!--                        <div class="col-md-4">-->
+                <!--                            <img class="news_img_show" src="https://truffle-assets.imgix.net/pxqrocxwsjcc_4mlylloieeiqmyecgk0qq8_rose%CC%81-champagne-cupcakes-landscape-no-graphic.jpg"/>-->
+                <!--                        </div>-->
+                <!---->
+                <!--                        <div class="col-md-8">-->
+                <!---->
+                <!--                            <div class="p-4">-->
+                <!--                                <h3 class="news_title_show text-center mt-4">Открытие нового кафе</h3>-->
+                <!--                                <p class="news_time_show mt-4 mb-0">22.06.2019</p>-->
+                <!--                                <p class="news_text_show">vehicula ipsum a arcu cursus vitae congue mauris rhoncus-->
+                <!--                                    aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi-->
+                <!--                                    tristique senectus et netus et malesuada fames ac turpis egestas maecenas pharetra-->
+                <!--                                    convallis posuere morbi leo urna molestie at elementum eu facilisis sed odio morbi-->
+                <!--                                    quis commodo odio aenean sed adipiscing</p>-->
+                <!---->
+                <!--                                <button class="btn-edit-news d-block ml-auto" data-news-id=""><i-->
+                <!--                                            class="fas fa-pencil-alt mr-1"></i> <span>Редактировать</span>-->
+                <!--                                </button>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!---->
+                <!---->
+                <!--                <div class="shadow my_rounded8 bg-white mt-2">-->
+                <!--                    <div class="row">-->
+                <!---->
+                <!--                        <div class="col">-->
+                <!---->
+                <!--                            <div class="p-4">-->
+                <!--                                <h3 class="news_title_show text-center mt-4">Открытие нового кафе</h3>-->
+                <!--                                <p class="news_time_show mt-4 mb-0">22.06.2019</p>-->
+                <!--                                <p class="news_text_show">vehicula ipsum a arcu cursus vitae congue mauris rhoncus-->
+                <!--                                    aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi-->
+                <!--                                    tristique senectus et netus et malesuada fames ac turpis egestas maecenas pharetra-->
+                <!--                                    convallis posuere morbi leo urna molestie at elementum eu facilisis sed odio morbi-->
+                <!--                                    quis commodo odio aenean sed adipiscing</p>-->
+                <!---->
+                <!--                                <button class="btn-edit-news d-block ml-auto" data-news-id=""><i-->
+                <!--                                            class="fas fa-pencil-alt mr-1"></i> <span>Редактировать</span>-->
+                <!--                                </button>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
 
             </div>
         </div>
@@ -429,13 +439,15 @@ if (isset($_SESSION['cafe']))
 
                         <div id="btn_delete_div" class="row d-none">
                             <div class="col-sm-12 col-md-4 offset-md-4 pb-3">
-                                <input id="btn_delete_news" type="button" class="mybtnred w-100 mt-0 mb-0" href="" value="Удалить">
+                                <input id="btn_delete_news" type="button" class="mybtnred w-100 mt-0 mb-0" href=""
+                                       value="Удалить">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-sm-12 col-md-4 offset-md-4">
-                                <input id="add_news_btn" type="submit" class="mybtn w-100 mt-0 mb-0" href="" value="Добавить">
+                                <input id="add_news_btn" type="submit" class="mybtn w-100 mt-0 mb-0" href=""
+                                       value="Добавить">
                             </div>
                         </div>
                     </div>
@@ -449,6 +461,104 @@ if (isset($_SESSION['cafe']))
 </div>
 
 
+<div id="modal_cafe_info" class="modal fade" tabindex="-1" role="dialog"
+     aria-hidden="false">
+    <div id="modal_cafe_info_div" class="modal-dialog modal-lg" role="document">
+
+        <div id="cafe_modal" class="modal-content">
+
+
+            <div class="modal-body my_rounded4">
+                <div class="container">
+                    <div class="row">
+
+
+                        <div class="col-sm-12">
+                            <i class="fas fa-times my_modal_close" data-dismiss="modal" aria-label="Close"></i>
+                            <h4 id="cafe_title" class="text-center mt-4 mb-2"
+                                data-cafe-id="">sdfasdf</h4>
+                        </div>
+
+                        <div class="col-sm-12 col-lg-3 text-center pl-3">
+
+
+                            <img id="img_cafe_logo" class="m-auto d-block"
+                                 src="" alt="">
+                            <img id="img_cafe_rating" class="mt-2 mb-3" src="images/rating.png" alt="">
+                            <br/>
+                            <p class="p_left_text pl-3 text-left d-inline-block w-50 mb-2">Всего заказов:</p>
+                            <p class="d-inline-block w-25 text-center mb-2">1140</p>
+                            <br/>
+                            <p class="p_left_text pl-3 text-left d-inline-block w-50 mb-2">Отзывов:</p>
+                            <p class="d-inline-block w-25 text-center mb-2">160</p>
+                            <br/>
+                            <p class="p_left_text pl-3 text-left d-inline-block w-50 mb-2">Всего продуктов:</p>
+                            <p class="d-inline-block w-25 text-center mb-2">22</p>
+
+                        </div>
+
+
+                        <div id="col_cafe_info" class="col-sm-12 col-lg-9 pt-3 mynowrap">
+                            <p class="text_left text-sm-center text-lg-left  d-inline-block w-25 mynowrap">Адрес:</p>
+                            <p class="text_middle text-center d-inline-block w-75 mynowrap">sdfsdf</p>
+                            <br/>
+                            <p class="text_left text-sm-center text-lg-left d-inline-block w-25">Имя директора:</p>
+                            <p class="text_middle text-center d-inline-block w-75">sdafsadf</p>
+                            <br/>
+                            <p class="text_left text-sm-center text-lg-left d-inline-block w-25">Телефон:</p>
+                            <p class="text_middle text-center d-inline-block w-75">sdfsadf</p>
+                            <br/>
+                            <p class="text_left text-sm-center text-lg-left d-inline-block w-25">Часы работы:</p>
+                            <p class="text_middle text-center d-inline-block w-75">
+                                asfsdafsdf
+                            </p>
+                            <br/>
+                            <p class="text_left text-sm-center text-lg-left d-inline-block w- w-25">ИНН:</p>
+                            <p class="text_middle text-center d-inline-block w-75">sdfsdaf</p>
+                            <br/>
+                            <p class="text_left text-sm-center text-lg-left d-inline-block w-25">Название ООО или
+                                ИП:</p>
+                            <p class="text_middle text-center d-inline-block w-75">sadfsdf</p>
+                            <br/>
+                            <p class="text_left text-sm-center text-lg-left d-inline-block w-25">Юридический адрес:</p>
+                            <p class="text_middle text-center d-inline-block w-75">sdfsadf</p>
+                            <br/>
+                            <p class="text_left text-sm-center text-lg-left d-inline-block w-25">Код ОКПО:</p>
+                            <p class="text_middle text-center d-inline-block w-75">sadfsdf</p>
+                            <br/>
+                            <p class="text_left text-sm-center text-lg-left d-inline-block w-25">Фактический адрес:</p>
+                            <p class="text_middle text-center d-inline-block w-75">asfsadf</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal-footer">
+
+                <div class="container pb-4 pt-4">
+
+                    <div id="btn_delete_div" class="row">
+                        <div class="col-sm-12 col-md-4 offset-md-4">
+                            <input id="btn_delete_news" type="button" class="mybtnred w-100 mt-0 mb-0" href=""
+                                   value="Приостановить" data-cafe-id="">
+                        </div>
+                    </div>
+
+                    <div id="btn_accept_div" class="row">
+                        <div class="col-sm-12 col-md-4 offset-md-4">
+                            <input id="btn_accept_div" type="button" class="btn-grad-green w-100 mt-0 mb-0 px-4 py-2 shadow" href=""
+                                   value="Одобрить" data-cafe-id="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
 
 
 <!-- ****************** REGION ALERT ********************-->

@@ -23,7 +23,7 @@ ob_start();
 ?>
 
 <?php foreach ($cafes as $cafe): ?>
-    <tr class="cafe_row">
+    <tr class="cafe_row" data-cafe-id="<?= $cafe->id ?>">
         <td class="text-center p-0">
             <div class="p-2 text-center column-logo">
                 <img class="table_logo" src="/images/cafelogos/<?= $cafe->logo_name ?>" alt="">

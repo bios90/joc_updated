@@ -5,14 +5,13 @@ var last_sort = null;
 
 $(document).ready(function ()
 {
-    init();
     setListeners();
+
 
     $('.nav-tabs').find('#myCafeTabLabel').on('shown.bs.tab', function ()
     {
         requestCafes(null);
     });
-    
 });
 
 
@@ -109,6 +108,7 @@ function displayTable(data)
     }
 
     updateStatusListeners();
+    updateRowListeners();
     setListeners();
 }
 
@@ -117,9 +117,73 @@ function updateStatusListeners()
 {
     $('.btn-status').click(function (event)
     {
+        event.stopPropagation();
         let id = $(this).attr('data-cafe-id');
         changeStatus(id);
+    });
+
+    $('.column-phone a').click(function (event)
+    {
+        event.stopPropagation();
+    });
+
+    $('.column-email a').click(function (event)
+    {
+        event.stopPropagation();
+    });
+}
+
+function updateRowListeners()
+{
+    $('.cafe_row').click(function (e)
+    {
+        let id = $(this).attr('data-cafe-id');
+        requestFullCafeInfo(id);
     })
+}
+
+function requestFullCafeInfo(id)
+{
+    var dataToSend = new FormData();
+    dataToSend.append('cafe_id', id);
+
+    $.ajax({
+        url: "/sside/getfullcafeinfo.php",
+        type: "POST",
+        data: dataToSend,
+        async: true,
+        success: function (data)
+        {
+            console.log(data);
+
+            displayCafeModal(data);
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrown)
+        {
+
+        },
+        cache: false,
+        contentType: false,
+        processData: false
+    });
+}
+
+
+function displayCafeModal(data)
+{
+    if(isJson(data))
+    {
+        console.log('is json')
+        return;
+    }
+
+    $('[data-toggle="tooltip"]').tooltip('dispose');
+    $('#cafe_modal').html('');
+    $('#cafe_modal').html(data);
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $('#modal_cafe_info').modal('show');
+    updateFullInfoStatusBtn();
 }
 
 
@@ -146,6 +210,17 @@ function changeStatus(id)
         cache: false,
         contentType: false,
         processData: false
+    });
+}
+
+function updateFullInfoStatusBtn()
+{
+    let id = $('#cafe_info_modal_body').attr('data-cafe-id');
+
+    $('#btn_status_toggle').click(function (e)
+    {
+        $('#modal_cafe_info').modal('hide');
+        changeStatus(id);
     });
 }
 

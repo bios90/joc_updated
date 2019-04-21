@@ -6,7 +6,7 @@ include('helpers/db_helper.php');
 if(isset($_SESSION['id']) && !isset($_SESSION['cafe']))
 {
     echo "entered checkk";
-    $cafe = getCafeById($_SESSION['id'],$conn);
+    $cafe = getCafeById($_SESSION['id']);
     $_SESSION['cafe']=serialize($cafe);
     return;
 }
@@ -64,7 +64,7 @@ if(!isset($_SESSION['id']) && !empty($_COOKIE['remember_me']))
         exit;
     }
 
-    $cafe = getCafeById($cafe_id,$conn);
+    $cafe = getCafeById($cafe_id);
 
     $_SESSION['cafe']= serialize($cafe);
 }

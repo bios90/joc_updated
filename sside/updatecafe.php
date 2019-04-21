@@ -120,7 +120,7 @@ if(count($errors) > 0)
 
 
 $cafe_id = mysqli_real_escape_string($conn, $_POST['cafe_id']);
-$cafe = getCafeById($cafe_id,$conn);
+$cafe = getCafeById($cafe_id);
 
 $randName = $cafe->logo_name;
 
@@ -201,7 +201,7 @@ if(!$result)
 }
 
 
-$cafe = getCafeById($cafe_id,$conn);
+$cafe = getCafeById($cafe_id);
 $_SESSION['cafe']= serialize($cafe);
 
 if(!empty($_POST["password"]))
@@ -210,7 +210,7 @@ if(!empty($_POST["password"]))
 }
 else
     {
-        $cafe = getCafeById($cafe_id,$conn);
+        $cafe = getCafeById($cafe_id);
         $_SESSION['cafe']= serialize($cafe);
         echo json_encode([0=>"success",1=>"no_pass"]);
     }

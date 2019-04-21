@@ -938,7 +938,7 @@ if (isset($_SESSION['cafe']))
                         <a class="nav-link" href="#">О нас</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="//codeply.com">Новости</a>
+                        <a class="nav-link" href="/newspage.php">Новости</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Приложения</a>
@@ -962,6 +962,12 @@ if (isset($_SESSION['cafe']))
                             <div id="cafe_dropdown" class="dropdown-menu dropdown-menu-right"
                                  aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#"><i class="fas fa-user-cog"></i>Личный кабинет</a>
+
+
+                                <?php if($cafe->is_admin == 1): ?>
+                                    <a class="dropdown-item" href="/adminpanel.php"><i class="fas fa-tools"></i>Панель Администратора</a>
+                                <?php endif; ?>
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/sside/logout.php?&logout=1"><i
                                             class="fas fa-door-open"></i>Выйти</a>
