@@ -288,7 +288,7 @@ if (isset($_SESSION['cafe']))
 
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-12 col-md-4 offset-md-4 pb-4 pt-4">
+                            <div class="col-sm-12 col-md-4 offset-md-2 pb-4 pt-4">
                                 <input type="submit" class="mybtn w-100 mt-0 mb-0" href="" value="Сохранить">
                             </div>
                         </div>
@@ -409,6 +409,15 @@ if (isset($_SESSION['cafe']))
                 <div class="modal-footer">
 
                     <div class="container">
+
+                        <div class="row">
+
+                            <div id="remove_desert_row" class="col-sm-12 col-md-4 offset-md-4 pb-0 pt-4 d-none">
+                                <input id="btn_delete_desert" type="button" class="mybtnred w-100 mt-0 mb-0" href="" value="Удалить">
+                            </div>
+
+                        </div>
+
                         <div class="row">
                             <div class="col-sm-12 col-md-4 offset-md-4 pb-4 pt-4">
                                 <input type="submit" class="mybtn w-100 mt-0 mb-0" href="" value="Добавить">
@@ -645,6 +654,16 @@ if (isset($_SESSION['cafe']))
                 <div class="modal-footer">
 
                     <div class="container">
+
+                        <div class="row">
+
+                            <div id="remove_drink_row" class="col-sm-12 col-md-4 offset-md-4 pb-0 pt-4 d-none">
+                                <input id="btn_delete_drink" type="button" class="mybtnred w-100 mt-0 mb-0" href="" value="Удалить">
+                            </div>
+
+                        </div>
+
+
                         <div class="row">
 
                             <div class="col-sm-12 col-md-4 offset-md-4 pb-4 pt-4">
@@ -652,6 +671,8 @@ if (isset($_SESSION['cafe']))
                             </div>
 
                         </div>
+
+
                     </div>
 
                 </div>
@@ -906,7 +927,8 @@ if (isset($_SESSION['cafe']))
         <nav class="navbar navbar-expand-lg sticky-top">
             <div class="d-flex w-25 order-0 nav_on_md">
                 <a class="navbar-brand mr-1" href="/">JOC</a>
-                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                        data-target=".navbar-collapse">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -980,7 +1002,8 @@ if (isset($_SESSION['cafe']))
                            aria-controls="hotDrinksTabs" aria-selected="false" data-tab-num="1">Горячие напитки</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link sub_nav_link" id="coldDrinkTabLabel" data-toggle="tab" href="#coldDrinksTab" role="tab"
+                        <a class="nav-link sub_nav_link" id="coldDrinkTabLabel" data-toggle="tab" href="#coldDrinksTab"
+                           role="tab"
                            aria-controls="coldDrinksTab" aria-selected="false" data-tab-num="2">Холодные напитки</a>
                     </li>
                     <li class="nav-item">
@@ -1051,7 +1074,8 @@ if (isset($_SESSION['cafe']))
                     <div class="col-sm-12 col-lg-3 text-center pl-3">
 
 
-                        <img id="img_cafe_logo" class="m-auto d-block" src="<?= "/images/cafelogos/" . $cafe->logo_name ?>" alt="">
+                        <img id="img_cafe_logo" class="m-auto d-block"
+                             src="<?= "/images/cafelogos/" . $cafe->logo_name ?>" alt="">
                         <img id="img_cafe_rating" class="mt-2 mb-3" src="images/rating.png" alt="">
                         <br/>
                         <p class="p_left_text pl-3 text-left d-inline-block w-50 mb-2">Всего заказов:</p>
@@ -1199,7 +1223,7 @@ if (isset($_SESSION['cafe']))
 <!-- ****************** END REGION ALERT ********************-->
 
 
-<!-- ************ Fooret section **************** -->
+<!-- ************ Foorer section **************** -->
 
 <section id="section_footer">
     <div class="container">
@@ -1255,8 +1279,6 @@ if (isset($_SESSION['cafe']))
 
 
 <!-- ************END Footer SECTION**************** -->
-
-
 <script src="js/cafe_page.js?t=5613132424"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

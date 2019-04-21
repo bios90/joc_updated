@@ -18,13 +18,11 @@ function fileUploaded($field_name)
         if ($_FILES [$field_name] ["error"] == UPLOAD_ERR_OK)
         {
             return true;
-        }
-        else
+        } else
         {
             return false;
         }
-    }
-    else
+    } else
     {
         return false;
     }
@@ -32,12 +30,12 @@ function fileUploaded($field_name)
 
 function postHaveValue($field_name)
 {
-    if(!isset($_POST[$field_name]))
+    if (!isset($_POST[$field_name]))
     {
         return false;
     }
 
-    if(strlen(trim($_POST[$field_name]))<=0)
+    if (strlen(trim($_POST[$field_name])) <= 0)
     {
         return false;
     }
@@ -47,29 +45,28 @@ function postHaveValue($field_name)
 
 function isPassValidInEdit()
 {
-    if(strlen(trim($_POST['password'])) == 0)
+    if (strlen(trim($_POST['password'])) == 0)
     {
         return true;
-    }
-    else
+    } else
 
-    if(strlen(trim($_POST['password'])) < 8)
-    {
-        return false;
-    }
+        if (strlen(trim($_POST['password'])) < 8)
+        {
+            return false;
+        }
 
     return true;
 }
 
 function isHourValid($field_name)
 {
-    if(strlen(trim($_POST[$field_name])) == 0)
+    if (strlen(trim($_POST[$field_name])) == 0)
     {
         return false;
     }
 
     $hour = $_POST[$field_name];
-    if(!(($hour >= 0) && ($hour <= 23)))
+    if (!(($hour >= 0) && ($hour <= 23)))
     {
         return false;
     }
@@ -79,13 +76,13 @@ function isHourValid($field_name)
 
 function isMinuteValid($field_name)
 {
-    if(strlen(trim($_POST[$field_name])) == 0)
+    if (strlen(trim($_POST[$field_name])) == 0)
     {
         return false;
     }
 
     $min = $_POST[$field_name];
-    if(!(($min >= 0) && ($min <= 59)))
+    if (!(($min >= 0) && ($min <= 59)))
     {
         return false;
     }
@@ -95,7 +92,7 @@ function isMinuteValid($field_name)
 
 function checkForValidImgFile($field_name)
 {
-    if(!fileUploaded($field_name))
+    if (!fileUploaded($field_name))
     {
         return false;
     }
@@ -113,7 +110,7 @@ function checkForValidImgFile($field_name)
     return true;
 }
 
-function moveAndCreateProductImage($field_name,$dir)
+function moveAndCreateProductImage($field_name, $dir)
 {
     $file_name = $_FILES[$field_name]["name"];
     $extansion = pathinfo($file_name, PATHINFO_EXTENSION);
@@ -150,11 +147,16 @@ function getPostValue($field_name)
 function getIntegerFromString($str)
 {
     $str = preg_replace('/[^0-9.]+/', '', $str);
-    if(strlen($str)== 0)
+    if (strlen($str) == 0)
     {
         return false;
     }
 
     $int = (int)$str;
     return $int;
+}
+
+function timeStampToDate($timestamp)
+{   $timestamp = strtotime($timestamp);
+    return gmdate("Y.m.d", $timestamp);
 }

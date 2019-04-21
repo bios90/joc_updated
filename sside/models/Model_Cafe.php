@@ -24,6 +24,7 @@ class Model_Cafe
     public $minute_do;
     public $logo_name;
     public $status;
+    public $is_admin;
 
     function setData($data)
     {
