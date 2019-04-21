@@ -104,7 +104,7 @@ else
                                 <a class="dropdown-item" href="/cafe_page.php"><i class="fas fa-user-cog"></i>Личный кабинет</a>
 
                                 <?php if($cafe->is_admin == 1): ?>
-                                    <a class="dropdown-item" href="/sside/adminpanel.php"><i class="fas fa-tools"></i>Панель Администратора</a>
+                                    <a class="dropdown-item" href="/adminpanel.php"><i class="fas fa-tools"></i>Панель Администратора</a>
                                 <?php endif; ?>
 
                                 <div class="dropdown-divider"></div>

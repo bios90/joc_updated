@@ -48,7 +48,7 @@ ob_start();
 
 
                 <img id="img_cafe_logo" class="m-auto d-block"
-                     src="" alt="">
+                     src="/images/cafelogos/<?= $cafe->logo_name ?>" alt="">
                 <img id="img_cafe_rating" class="mt-2 mb-3" src="images/rating.png" alt="">
                 <br/>
                 <p class="p_left_text pl-3 text-left d-inline-block w-50 mb-2">Всего заказов:</p>

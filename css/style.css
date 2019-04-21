@@ -918,7 +918,8 @@ input[type="checkbox"]:checked + label {
 
 #cafe_hero,
 #forgot_pass_hero,
-#admin_hero {
+#admin_hero,
+#news_hero {
     margin-top: -60px;
     background-image: url("../images/cafe_page_bg.png");
     width: 100%;
@@ -1234,7 +1235,7 @@ p.third {
     filter: brightness(95%);
 }
 
-.cafe_page #section_footer, .admin_panel #section_footer {
+.cafe_page #section_footer, .admin_panel #section_footer, .newspage_body #section_footer {
     margin-top: 0;
 }
 

@@ -92,7 +92,7 @@ if (isset($_SESSION['cafe']))
                             </a>
                             <div id="cafe_dropdown" class="dropdown-menu dropdown-menu-right"
                                  aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#"><i class="fas fa-user-cog"></i>Личный кабинет</a>
+                                <a class="dropdown-item" href="/cafe_page.php"><i class="fas fa-user-cog"></i>Личный кабинет</a>
 
 
                                 <?php if ($cafe->is_admin == 1): ?>

@@ -128,30 +128,7 @@ if (isset($_SESSION['cafe']))
 
     <div id="newsbox" class="container mt-3">
 
-        <div id="cards_div" class="card-columns">
 
-            <div class="card">
-                <img class="card-img-top img-fluid" src="https://source.unsplash.com/random/300x200" alt="">
-                <div class="card-body">
-                    <h4 class="card-title news_title_show">Card title that wraps to a new line</h4>
-                    <p class="news_time_show mt-2 mb-0">22.05.1990</p>
-                    <p class="card-text news_text_show text_show_card">This is a longer card with supporting text below as a natural lead-in to
-                        additional content. This content
-                        is a little bit longer.</p>
-                </div>
-            </div>
-
-
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title news_title_show">Card title</h4>
-                    <p class="news_time_show mt-2 mb-0">22.05.1990</p>
-                    <p class="card-text news_text_show text_show_card">This card has supporting text below as a natural lead-in to additional
-                        content.</p>
-                </div>
-            </div>
-
-        </div>
     </div>
 
 

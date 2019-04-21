@@ -158,5 +158,5 @@ function getIntegerFromString($str)
 
 function timeStampToDate($timestamp)
 {   $timestamp = strtotime($timestamp);
-    return gmdate("Y.m.d", $timestamp);
+    return gmdate("d.m.Y", $timestamp);
 }
