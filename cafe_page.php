@@ -1255,11 +1255,11 @@ if (isset($_SESSION['cafe']))
             </div>
 
             <div class="col-xs-12 col-md-4 text-center socicons">
-                <img class="socialicon" src="images/skype.svg">
-                <img class="socialicon" src="images/twitter.svg">
-                <img class="socialicon" src="images/vk.svg">
-                <img class="socialicon" src="images/gp.svg">
-                <img class="socialicon" src="images/fb.svg">
+                <img class="socialicon" src="images/skype.png">
+                <img class="socialicon" src="images/twitter.png">
+                <img class="socialicon" src="images/vk.png">
+                <img class="socialicon" src="images/gp.png">
+                <img class="socialicon" src="images/fb.png">
             </div>
 
             <div class="col-12">

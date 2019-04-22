@@ -16,13 +16,13 @@ $news = getAllNews();
 ob_start();
 
 ?>
-<div id="cards_div" class="card-columns">
+<div id="cards_div" class="card-columns" style="overflow: visible;">
     <?php foreach ($news as $newsone): ?>
 
         <?php if ($newsone->image != null): ?>
 
 
-            <div class="card shadow">
+            <div class="card shadow-sm" style="overflow: visible;">
                 <img class="card-img-top img-fluid mycard-img" src="/images/news/<?= $newsone->image ?>" alt="">
                 <div class="card-body">
                     <h4 class="card-title news_title_show"><?= $newsone->title ?></h4>
@@ -34,7 +34,7 @@ ob_start();
         <?php else: ?>
 
 
-            <div class="card shadow">
+            <div class="card shadow-sm">
                 <div class="card-body">
                     <h4 class="card-title news_title_show"><?= $newsone->title ?></h4>
                     <p class="news_time_show mt-2 mb-0"><?= timeStampToDate($newsone->date) ?></p>

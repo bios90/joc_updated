@@ -614,6 +614,8 @@ a:hover {
 .socialicon {
     filter: brightness(75%);
     margin-right: 8px;
+    height: 40px;
+    width: 40px;
 }
 
 .socialicon:hover {
@@ -1562,6 +1564,12 @@ p.third {
 .text_middle_red {
     color: #d0021b;
     font-weight: 600;
+}
+
+.myshadow
+{
+    outline: 10px solid transparent;
+    box-shadow: -2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 

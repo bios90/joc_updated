@@ -6,16 +6,16 @@ include('sside/db.php');
 include('sside/models/Model_Cafe.php');
 include('sside/remember_me.php');
 
-if(isset($_SESSION['cafe']))
+if (isset($_SESSION['cafe']))
 {
     echo "cafe not null";
     $cafe = unserialize($_SESSION['cafe']);
     echo $cafe->is_admin;
-}else
-    {
-        echo "cafe null";
-        $cafe = null;
-    }
+} else
+{
+    echo "cafe null";
+    $cafe = null;
+}
 
 ?>
 
@@ -57,12 +57,11 @@ if(isset($_SESSION['cafe']))
 
 <!-- Nav Bar!!!!! -->
 
-<section id="section_navbar" data-logged="<?php 
-if($cafe == null)
+<section id="section_navbar" data-logged="<?php
+if ($cafe == null)
 {
     echo 0;
-}
-else
+} else
 {
     echo 1;
 }
@@ -71,7 +70,8 @@ else
         <nav class="navbar navbar-expand-lg sticky-top">
             <div class="d-flex w-25 order-0 nav_on_md">
                 <a class="navbar-brand mr-1" href="/">JOC</a>
-                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                        data-target=".navbar-collapse">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -97,18 +97,23 @@ else
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-center" href="#" id="navbarDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img id="cafe_nav_logo" src="<?php echo "/images/cafelogos/".$cafe->logo_name ?>" alt="">
+                                <img id="cafe_nav_logo" src="<?php echo "/images/cafelogos/" . $cafe->logo_name ?>"
+                                     alt="">
                                 <?php echo $cafe->name ?>
                             </a>
-                            <div id="cafe_dropdown" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/cafe_page.php"><i class="fas fa-user-cog"></i>Личный кабинет</a>
+                            <div id="cafe_dropdown" class="dropdown-menu dropdown-menu-right"
+                                 aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/cafe_page.php"><i class="fas fa-user-cog"></i>Личный
+                                    кабинет</a>
 
-                                <?php if($cafe->is_admin == 1): ?>
-                                    <a class="dropdown-item" href="/adminpanel.php"><i class="fas fa-tools"></i>Панель Администратора</a>
+                                <?php if ($cafe->is_admin == 1): ?>
+                                    <a class="dropdown-item" href="/adminpanel.php"><i class="fas fa-tools"></i>Панель
+                                        Администратора</a>
                                 <?php endif; ?>
 
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/sside/logout.php?&logout=1"><i class="fas fa-door-open"></i>Выйти</a>
+                                <a class="dropdown-item" href="/sside/logout.php?&logout=1"><i
+                                            class="fas fa-door-open"></i>Выйти</a>
                             </div>
 
                         </li>
@@ -551,7 +556,7 @@ else
                     года. Нет желания создавать собственную систему мобильных приложений? Подключите наш сервис и
                     встречайте тысячи новых лояльных покупателей!</p>
                 <div class="text-center">
-                    <a id="btn_connect"  class="mybtn text-white" >Подключить</a>
+                    <a id="btn_connect" class="mybtn text-white">Подключить</a>
                 </div>
                 <div class="partners_row">
                     <div id="partner1" class="partner_div"></div>
@@ -574,26 +579,17 @@ else
     <div class="container">
         <div class="row">
 
-        <div class="col-12">
-            <h2 class="title_subhero">О нас</h2>
-            <p class="about_text">Integer eget aliquet nibh praesent tristique magna sit amet purus gravida quis blandit
-                turpis cursus in hac habitasse platea dictumst quisque sagittis purus sit amet volutpat consequat mauris
-                nunc congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit
-                amet tellus cras adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat vestibulum
-                lectus mauris ultrices eros in cursus turpis massa tincidunt dui ut ornare lectus sit amet est placerat
-                in egestas erat imperdiet sed euismod nisi porta lorem mollis aliquam ut porttitor leo a diam
-                sollicitudin tempor id eu nisl nunc.</p>
-            <p class="about_text">Tincidunt eget nullam non nisi est sit amet facilisis magna etiam tempor orci eu
-                lobortis elementum nibh tellus molestie nunc non blandit massa enim nec dui nunc mattis enim ut tellus
-                elementum sagittis vitae et leo duis ut diam quam nulla porttitor massa id neque aliquam vestibulum
-                morbi blandit cursus risus at ultrices mi tempus imperdiet nulla malesuada pellentesque elit eget
-                gravida cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae
-                ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis
-                volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit
-                adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit amet mauris commodo quis
-                imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc
-                consequat interdum varius.</p>
-        </div>
+            <div class="col-12">
+                <h2 class="title_subhero">О нас</h2>
+                <p class="about_text">Добро пожаловать в «JOC».
+                    Мы-компания, миссией которой является экономия самого важного ресурса в жизни человека- времени. С
+                    нашей помощью вы сможете упростить процесс покупки и оплаты напитков и выпечки в ваших любимых кафе.
+                    Особенностью нашего сервиса является простота и удобство в использовании, возможности подобрать под
+                    себя оптимальный сеттинг. Делайте заказ и забирайте его к установленному вами времени: наше
+                    приложение предоставляет возможность максимально эффективно сохранить такие ценные минуты. Потратьте
+                    их на себя, на тех кто вас любит, кто вас ждёт.</p>
+
+            </div>
 
             <div class="col-12">
                 <h2 class="title_subhero">Преимущества</h2>
@@ -630,8 +626,6 @@ else
         </div>
 
 
-
-
         <div class="col-12">
             <h2 class="title_subhero">Подключение</h2>
         </div>
@@ -662,7 +656,7 @@ else
             <div class="step_div">
                 <p class="feature_title">Заполните меню</p>
                 <p style="font-size: 11px;" class="feature_text">В личном кабинете представителя кафе вы можете добавить
-                    продукты для отображения в меню кафе. После добавления пользователи сразу могут приобретать их
+                    продукты для отображения в меню кафе. После добавления пользователи сразу могут приобретать их.
                 </p>
             </div>
         </div>
@@ -738,11 +732,11 @@ else
             </div>
 
             <div class="col-xs-12 col-md-4 text-center socicons">
-                <img class="socialicon" src="images/skype.svg">
-                <img class="socialicon" src="images/twitter.svg">
-                <img class="socialicon" src="images/vk.svg">
-                <img class="socialicon" src="images/gp.svg">
-                <img class="socialicon" src="images/fb.svg">
+                <img class="socialicon" src="images/skype.png">
+                <img class="socialicon" src="images/twitter.png">
+                <img class="socialicon" src="images/vk.png">
+                <img class="socialicon" src="images/gp.png">
+                <img class="socialicon" src="images/fb.png">
             </div>
 
             <div class="col-12">
