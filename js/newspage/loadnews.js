@@ -9,6 +9,8 @@ function requestNews()
     var dataToSend = new FormData();
 
     let rand = getRandomInt(0,1);
+    rand = 0;
+
     var url;
     if(rand == 0)
     {

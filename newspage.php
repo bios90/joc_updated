@@ -92,7 +92,7 @@ if (isset($_SESSION['cafe']))
                             </a>
                             <div id="cafe_dropdown" class="dropdown-menu dropdown-menu-right"
                                  aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#"><i class="fas fa-user-cog"></i>Личный кабинет</a>
+                                <a class="dropdown-item" href="/cafe_page.php"><i class="fas fa-user-cog"></i>Личный кабинет</a>
 
 
                                 <?php if ($cafe->is_admin == 1): ?>
@@ -161,11 +161,9 @@ if (isset($_SESSION['cafe']))
             </div>
 
             <div class="col-xs-12 col-md-4 text-center socicons">
-                <img class="socialicon" src="images/skype.png">
-                <img class="socialicon" src="images/twitter.png">
-                <img class="socialicon" src="images/vk.png">
-                <img class="socialicon" src="images/gp.png">
                 <img class="socialicon" src="images/fb.png">
+                <img class="socialicon" src="images/vk.png">
+                <img class="socialicon" src="images/inst.png">
             </div>
 
             <div class="col-12">

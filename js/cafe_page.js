@@ -444,6 +444,14 @@ $(document).ready(function ()
         clearAll();
         console.log("closed modal");
     });
+
+    $('#par_arrow').click(function()
+    {
+        console.log('clicked');
+
+        openSelect('#select_categ');
+
+    });
 });
 
 function loadAllData()
@@ -1556,5 +1564,20 @@ function makeActiveTabcolor()
     {
         img_desert.attr("src", "/images/desert.png");
         name_desert.removeClass("grad-text");
+    }
+}
+
+var openSelect = function(selector)
+{
+    var element = $(selector)[0], worked = false;
+    if (document.createEvent) { // all browsers
+        var e = document.createEvent("MouseEvents");
+        e.initMouseEvent("mousedown", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        worked = element.dispatchEvent(e);
+    } else if (element.fireEvent) { // ie
+        worked = element.fireEvent("onmousedown");
+    }
+    if (!worked) { // unknown browser / error
+        alert("It didn't worked in your browser.");
     }
 }

@@ -78,7 +78,7 @@ if ($cafe == null)
             <div id="collapsingNavbar" class="navbar-collapse collapse justify-content-center order-1 w-50">
                 <ul class="navbar-nav mx-auto text-center justify-content-center centerlinks">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">О нас</a>
+                        <a id="about_us" class="nav-link" href="">О нас</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/newspage.php">Новости</a>
@@ -574,7 +574,7 @@ if ($cafe == null)
 
 <!-- ************ Sub-Hero section **************** -->
 
-<section class="section_subhero">
+<section id="about_section" class="section_subhero">
 
     <div class="container">
         <div class="row">
@@ -582,9 +582,9 @@ if ($cafe == null)
             <div class="col-12">
                 <h2 class="title_subhero">О нас</h2>
                 <p class="about_text">Добро пожаловать в «JOC».
-                    Мы-компания, миссией которой является экономия самого важного ресурса в жизни человека- времени. С
-                    нашей помощью вы сможете упростить процесс покупки и оплаты напитков и выпечки в ваших любимых кафе.
-                    Особенностью нашего сервиса является простота и удобство в использовании, возможности подобрать под
+                    Мы-компания, миссией которой является экономия самого важного ресурса в жизни человека- времени.
+                    <br>С нашей помощью вы сможете упростить процесс покупки и оплаты напитков и выпечки в ваших любимых кафе.
+                    <br>Особенностью нашего сервиса является простота и удобство в использовании, возможности подобрать под
                     себя оптимальный сеттинг. Делайте заказ и забирайте его к установленному вами времени: наше
                     приложение предоставляет возможность максимально эффективно сохранить такие ценные минуты. Потратьте
                     их на себя, на тех кто вас любит, кто вас ждёт.</p>
@@ -633,7 +633,7 @@ if ($cafe == null)
 
         <div style="height: 100px;" class="col-md-6 col-xs-12 offset-md-4 step_row">
 
-            <div class="d-none d-xl-block" id="line">
+            <div class="d-none " id="line">
 
             </div>
 
@@ -732,11 +732,14 @@ if ($cafe == null)
             </div>
 
             <div class="col-xs-12 col-md-4 text-center socicons">
-                <img class="socialicon" src="images/skype.png">
-                <img class="socialicon" src="images/twitter.png">
-                <img class="socialicon" src="images/vk.png">
-                <img class="socialicon" src="images/gp.png">
+                <!--                <img class="socialicon" src="images/skype.png">-->
+                <!--                <img class="socialicon" src="images/twitter.png">-->
+                <!--                <img class="socialicon" src="images/gp.png">-->
                 <img class="socialicon" src="images/fb.png">
+                <img class="socialicon" src="images/vk.png">
+                <img class="socialicon" src="images/inst.png">
+
+
             </div>
 
             <div class="col-12">

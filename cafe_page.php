@@ -553,12 +553,14 @@ if (isset($_SESSION['cafe']))
                                 <div>
                                     <small class="third-small">Объем</small>
                                     <small class="third-small third-center">Цена</small>
+
                                     <small class="third-small"></small>
                                     <input id="inp_weight_weight" type="text" class="form-control my_input third"
                                            name="weight_weight">
                                     <input id="inp_weight_price" type="text"
-                                           class="form-control my_input third third-center"
+                                           class="form-control my_input third third-center price_input"
                                            name="weight_price">
+                                    <p class="r-letter pl-1">р</p>
                                     <button id="btn_add_weight" class="btn_add" type="button" id="inp_weight"
                                             name="name">
                                         Добавить
@@ -593,8 +595,9 @@ if (isset($_SESSION['cafe']))
                                     <small class="third-small"></small>
                                     <input type="text" class="form-control my_input third" id="inp_add_name"
                                            name="add_name">
-                                    <input type="text" class="form-control my_input third third-center"
+                                    <input type="text" class="form-control my_input third third-center price_input"
                                            id="inp_add_price" name="add_price">
+                                    <p class="r-letter pl-1">р</p>
                                     <button id="btn_add_add" class="btn_add" type="button" name="name"
                                     >Добавить
                                     </button>
@@ -631,7 +634,8 @@ if (isset($_SESSION['cafe']))
                                     <input id="inp_milk_name" type="text" class="form-control my_input third"
                                            name="milk_name">
                                     <input id="inp_milk_price" name="add_price" type="text"
-                                           class="form-control my_input third third-center">
+                                           class="form-control my_input third third-center price_input">
+                                    <p class="r-letter pl-1">р</p>
                                     <button id="btn_add_milk" class="btn_add" type="button" name="name"
                                     >Добавить
                                     </button>
@@ -809,8 +813,9 @@ if (isset($_SESSION['cafe']))
                                     <input id="inp_weight_weight_edit" type="text" class="form-control my_input third"
                                            name="weight_weight">
                                     <input id="inp_weight_price_edit" type="text"
-                                           class="form-control my_input third third-center"
+                                           class="form-control my_input third third-center price_input"
                                            name="weight_price">
+                                    <p class="r-letter pl-1">р</p>
                                     <button id="btn_add_weight_edit" class="btn_add" type="button" id="inp_weight_edit"
                                             name="name">
                                         Добавить
@@ -845,8 +850,9 @@ if (isset($_SESSION['cafe']))
                                     <small class="third-small"></small>
                                     <input type="text" class="form-control my_input third" id="inp_add_name_edit"
                                            name="add_name">
-                                    <input type="text" class="form-control my_input third third-center"
+                                    <input type="text" class="form-control my_input third third-center price_input"
                                            id="inp_add_price_edit" name="add_price">
+                                    <p class="r-letter pl-1">р</p>
                                     <button id="btn_add_add_edit" class="btn_add" type="button" name="name"
                                     >Добавить
                                     </button>
@@ -883,7 +889,8 @@ if (isset($_SESSION['cafe']))
                                     <input id="inp_milk_name_edit" type="text" class="form-control my_input third"
                                            name="milk_name">
                                     <input id="inp_milk_price_edit" name="add_price" type="text"
-                                           class="form-control my_input third third-center">
+                                           class="form-control my_input third third-center price_input">
+                                    <p class="r-letter pl-1">р</p>
                                     <button id="btn_add_milk_edit" class="btn_add" type="button" name="name"
                                     >Добавить
                                     </button>
@@ -961,7 +968,7 @@ if (isset($_SESSION['cafe']))
                             </a>
                             <div id="cafe_dropdown" class="dropdown-menu dropdown-menu-right"
                                  aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#"><i class="fas fa-user-cog"></i>Личный кабинет</a>
+                                <a class="dropdown-item" href="/cafe_page.php"><i class="fas fa-user-cog"></i>Личный кабинет</a>
 
 
                                 <?php if($cafe->is_admin == 1): ?>
@@ -1255,11 +1262,9 @@ if (isset($_SESSION['cafe']))
             </div>
 
             <div class="col-xs-12 col-md-4 text-center socicons">
-                <img class="socialicon" src="images/skype.png">
-                <img class="socialicon" src="images/twitter.png">
-                <img class="socialicon" src="images/vk.png">
-                <img class="socialicon" src="images/gp.png">
                 <img class="socialicon" src="images/fb.png">
+                <img class="socialicon" src="images/vk.png">
+                <img class="socialicon" src="images/inst.png">
             </div>
 
             <div class="col-12">
