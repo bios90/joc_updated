@@ -341,8 +341,7 @@ if (isset($_SESSION['cafe']))
 
             <div class="col-md-4 col-xs-12">
                 <p class="footer_text">
-                    Москва 122773<br/>
-                    Краснопресненская набережная 12
+                    Нижняя Красносельская 35 ст.52
                 </p>
             </div>
 

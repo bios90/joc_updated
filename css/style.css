@@ -256,6 +256,12 @@ section {
         width: 48% !important;
     }
 
+    #collapsingNavbar
+    {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+
     /*#cafe_dropdown*/
     /*{*/
     /*left: -32px !important;*/
@@ -294,10 +300,21 @@ section {
         text-align: left;
     }
 
+    #collapsingNavbar
+    {
+        padding-left: 36px;
+        padding-right: 36px;
+    }
+
     /*#cafe_dropdown*/
     /*{*/
     /*left: -32px !important;*/
     /*}*/
+}
+
+#about_us
+{
+    white-space: nowrap;
 }
 
 a:hover {
