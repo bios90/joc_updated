@@ -7,17 +7,17 @@ include('sside/helpers/global_helper.php');
 include('sside/models/Model_Cafe.php');
 include('sside/remember_me.php');
 
-//
-//if (isset($_SESSION['cafe']))
-//{
-//    echo "cafe not null";
-//    $cafe = unserialize($_SESSION['cafe']);
-//} else
-//{
-//    echo "cafe null";
-//    $cafe = null;
+
+if (isset($_SESSION['cafe']))
+{
+    echo "cafe not null";
+    $cafe = unserialize($_SESSION['cafe']);
+} else
+{
+    echo "cafe null";
+    $cafe = null;
 //    header("location:index.php");
-//}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
