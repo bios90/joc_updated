@@ -1225,11 +1225,26 @@ if (isset($_SESSION['cafe']))
 
 
 <!-- ****************** REGION ALERT ********************-->
-<div id="alert-fixed" class="invisible">
+<div class="invisible alert-fixed">
     <div class="col-sm-12 col-md-6 offset-md-3">
         <div id="my_alert" class="alert " role="alert">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <p></p>
+        </div>
+    </div>
+</div>
+
+
+<div id="alert-delete" class="alert-fixed" data-product-id="">
+    <div class="col-sm-12 col-md-6 offset-md-3" >
+        <div id="my_alert" class="alert alert-light shadow" role="alert">
+            <button type="button" class="close btn_close">&times;</button>
+            <br>
+            <p class="text-center p-2">Удалить продукт<span id="sp_product_name"></span>?</p>
+            <div class="d-flex flex-row-reverse">
+                <button id="btn_delete_ok" type="button" class="btn btn-danger mt-0 mb-0" href="">Удалить</button>
+                <button type="button" class="btn btn-outline-danger mt-0 mb-0 mr-3 btn_close" href="">Отмена</button>
+            </div>
         </div>
     </div>
 </div>
@@ -1281,8 +1296,8 @@ if (isset($_SESSION['cafe']))
                 <p></p>
             </div>
         </div>
-
     </div>
+
 
 
 </section>

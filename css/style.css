@@ -436,6 +436,7 @@ a:hover {
     background: linear-gradient(to right, #f51c1c, #fe8605);
     border-radius: 3px;
     box-shadow: -2px 2px 12px rgba(0, 0, 0, 0.2);
+    border: 0;
 }
 
 .mybtn:hover,.btn-grad-green:hover {
@@ -877,7 +878,7 @@ input[type="checkbox"]:checked + label {
     width: 100%;
 }
 
-#alert-fixed {
+.alert-fixed {
     position: fixed;
     top: 100px;
     left: 0px;

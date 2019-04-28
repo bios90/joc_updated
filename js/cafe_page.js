@@ -56,6 +56,15 @@ $(document).ready(function ()
 {
     init();
 
+    $('#alert-delete').hide();
+    $('#alert-delete').show();
+    $('#alert-delete').hide();
+    // $('#alert-delete').show();
+
+    // $('#alert-delete ').on('click', function() {
+    //     $("#selectedAssets").hide();
+    // });
+
     $("#categ_my_cafe").click(function (e)
     {
         activaTab("myCafeTab");
@@ -122,13 +131,15 @@ $(document).ready(function ()
     btn_delete_drink.click(function (e)
     {
         let product_id = $("#modal_add_drink").attr("data-product-id");
-        makeDeleteDrink(product_id);
+        showDeleteAlert(product_id);
+        // makeDeleteDrink(product_id);
     });
 
     btn_delete_desert.click(function (e)
     {
         let product_id = $("#modal_add_desert").attr("data-product-id");
-        makeDeleteDrink(product_id);
+        showDeleteAlert(product_id);
+        // makeDeleteDrink(product_id);
     });
 
 
@@ -558,6 +569,28 @@ function loadHotDrinks()
         contentType: false,
         processData: false
     });
+}
+
+function showDeleteAlert(product_id)
+{
+    console.log('fsdfas');
+    let alert = $('#alert-delete');
+    alert.attr('data-product-id',product_id);
+    let btn = $('#btn_delete_ok');
+    let btn_close = $('.btn_close');
+
+    btn_close.click(function (e)
+    {
+        alert.hide();
+    });
+
+    btn.click(function (e)
+    {
+        makeDeleteDrink(product_id);
+        alert.hide();
+    });
+
+    alert.show();
 }
 
 function showDeserts(data)
