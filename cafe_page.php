@@ -942,7 +942,7 @@ if (isset($_SESSION['cafe']))
             <div id="collapsingNavbar" class="navbar-collapse collapse justify-content-center order-1 w-50">
                 <ul class="navbar-nav mx-auto text-center justify-content-center centerlinks">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">О нас</a>
+                        <a class="nav-link mynowrap" href="/">О нас</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/newspage.php">Новости</a>
